@@ -1,9 +1,23 @@
+<!--Extend the master.blade.php -->
 @extends('master')
 
+<!--Title on tab current page -->
 @section('title')
     landingpage
 @endsection   
 
-@section('content')
+<!--Name / logo landingpage -->
+@section('name/logo')
     <h1>landingpage</h1>
-@endsection    
+@endsection 
+
+<!--Login -->
+@section('login')
+@include ('codeincludes/login')
+@endsection
+
+
+<!--Register form -->
+@section('registerform')
+@include ('codeincludes/register')
+@endsection
