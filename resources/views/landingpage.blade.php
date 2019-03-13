@@ -1,6 +1,8 @@
 <!--Extend the master.blade.php -->
 @extends('master')
 
+@include ('')
+
 <!--Title on tab current page -->
 @section('title')
     landingpage
