@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACCA,OAAO,CAAC,sDAAI",
+    "sources": [
+        "events.scss",
+        "_config.scss"
+    ],
+    "names": [],
+    "file": "events.css"
+}

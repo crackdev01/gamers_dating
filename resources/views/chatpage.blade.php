@@ -1,8 +1,7 @@
 @extends('master')
 
-@section('title')
-    chat
-@endsection   
+<!--Title on tab current page -->
+@section('title', 'chat')  
 
 @section('content')
     <h1>chatpage</h1>

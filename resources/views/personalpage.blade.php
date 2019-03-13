@@ -1,8 +1,7 @@
 @extends('master')
 
-@section('title')
-    personal
-@endsection   
+<!--Title on tab current page -->
+@section('title', 'personal')
 
 @section('content')
     <h1>personalpage</h1>

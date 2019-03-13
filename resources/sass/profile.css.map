@@ -1,0 +1,10 @@
+{
+    "version": 3,
+    "mappings": "ACCA,OAAO,CAAC,sDAAI",
+    "sources": [
+        "profile.scss",
+        "_config.scss"
+    ],
+    "names": [],
+    "file": "profile.css"
+}

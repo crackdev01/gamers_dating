@@ -13,5 +13,6 @@
     @yield('login')
 
     @yield('registerform')
+    
 </body>
 </html>

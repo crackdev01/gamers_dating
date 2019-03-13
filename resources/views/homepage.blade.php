@@ -1,9 +1,11 @@
 @extends('master')
 
-@section('title')
-    homepage
-@endsection   
+<!--Title on tab current page -->
+@section('title', 'home')
+
 
 @section('content')
     <h1>homepage</h1>
+
+    
 @endsection    

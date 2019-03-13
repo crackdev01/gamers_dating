@@ -1,8 +1,7 @@
 @extends('master')
 
-@section('title')
-    admin
-@endsection   
+<!--Title on tab current page -->
+@section('title', 'admin')
 
 @section('content')
     <h1>adminpage</h1>
