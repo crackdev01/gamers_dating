@@ -4,21 +4,28 @@ body {
   padding: 0;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
 }
 
 input[type="password"] {
-  padding: 10px;
   border: none;
   border-bottom: 1px solid black;
+  outline: none;
 }
 
 input[type="email"] {
-  padding: 10px;
   border: none;
   border-bottom: 1px solid black;
+  outline: none;
+}
+
+input[type="text"] {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
 }
 
 .debug {
-  border: 3px solid red;
+  border: 1px solid blue;
 }
 /*# sourceMappingURL=homepage.css.map */

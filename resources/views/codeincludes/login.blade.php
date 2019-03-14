@@ -12,27 +12,9 @@
             </span>
             @endif
         </div>
-        <div class="remember_me_container">
+        <div class="password_container">
             <div>
-                <input id="password" type="password" placeholder="password" class="password_input" name="password" required>
-                @if ($errors->has('password'))
-                <span class="" role="alert">
-                    <strong>{{ $errors->first('password') }}</strong>
-                </span>
-                @endif
-            </div>
-        </div>
-        <div class="login">
-            <button type="submit" class="">
-                {{ __('Login') }}
-            </button>
-        </div>
-        <div class="checkbox_container">
-            <div>
-                <input class="" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-                <label class="" for="remember">
-                    {{ __('Remember Me') }}
-                </label>
+                <input id="" type="password" placeholder="password" class="password_input" name="password" required>
             </div>
             <div>
                 @if (Route::has('password.request'))
@@ -42,6 +24,12 @@
                 @endif
             </div>
         </div>
+        <div class="login">
+            <button type="submit" class="">
+                {{ __('Login') }}
+            </button>
+        </div>
+        
     </div>
 
 </form>
