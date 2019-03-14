@@ -1,0 +1,46 @@
+
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+input[type="password"] {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+input[type="email"] {
+    padding: 10px;
+    border: none;
+    border-bottom: 1px solid black;
+}
+
+.debug {
+    border: 3px solid red;
+}
+
+// fonts
+$fontFamily: 'Poppins', sans-serif;
+
+$fontHeaderBig: 22px;
+$fontHeaderMedium: 20px;
+$fontHeaderSmall: 18px;
+
+$fontContentBig: 20px;
+$fontContentMedium: 18px;
+$FontContentSmall: 15px;
+
+// Colors
+$blue: #3490dc;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66D9b;
+$red: #C3091E;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;

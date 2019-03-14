@@ -1,0 +1,28 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+input[type="password"] {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+input[type="email"] {
+  padding: 10px;
+  border: none;
+  border-bottom: 1px solid black;
+}
+
+.debug {
+  border: 3px solid red;
+}
+
+html {
+  background-color: green;
+}
+/*# sourceMappingURL=chatpage.css.map */
