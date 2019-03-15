@@ -1,1 +1,86 @@
- 
+ // Widescreens
+@include mediaXl {
+    .container .flex1 .flex1_top {
+        width: 60%;
+    }
+}
+
+// Desktops and Laptops
+@include mediaLg {
+    .container .flex1 .flex1_top {
+        width: 60%;
+        margin: 40% auto 0 auto;
+    }
+
+}
+
+// Tablets and Small laptops
+@include mediaMd {
+    .container .flex1 .flex1_top {
+        width: 60%;
+        margin: 40% auto 0 auto;
+    }
+
+}
+
+// Smartphones
+@include mediaSm {
+    .container .flex1 {
+        height: 30%;
+        width: 100%;
+    }
+
+    .container .flex1 .flex1_top {
+        width: 70%;
+        height: 70%;
+        margin: 7% auto 0 auto;
+    }
+
+    .container .flex1 .flex1_bottom {
+        display: none;
+    }
+
+    .container .flex2 {
+        height: 70%;
+        width: 100%;
+    }
+
+    .container .flex2 .flex2_top {
+        width: 100%;
+        padding-top: 5px;
+        height: 10%;
+    }
+    .login button {
+        width: 50px;
+        height: 30px;
+        // margin: 0 10px 0 10px;
+    }
+
+    .password_container {
+        margin-left: 0px;
+    }
+
+    .flex2_top input[type="email"], input[type="password"] {
+        width: 110px;
+    }
+
+    .container .flex2 .flex2_middle {
+        height: 80%;
+        margin-top: 10px;
+    }
+
+    .register_head {
+        font-size: 18px;
+        // margin: 0;
+    }
+
+    .register_content input[type="password"] {
+        width: 160px;
+    }
+
+    .register_button button {
+        width: auto;
+        margin: 5px;
+    }
+
+}

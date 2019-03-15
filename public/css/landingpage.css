@@ -35,6 +35,8 @@ input[type="text"] {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
   width: 100%;
   height: 100%;
 }
@@ -49,9 +51,10 @@ input[type="text"] {
   width: 45%;
   height: 25%;
   margin: 20% auto 0 auto;
-  background-image: url("../images/logo3.jpg");
+  background-image: url("../images/logo_new.jpg");
   background-position: center center;
-  background-size: cover;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 .container .flex1 .flex1_bottom {
@@ -116,10 +119,10 @@ input[type="text"] {
 
 .container .flex2 .flex2_bottom {
   height: 30%;
-  width: 50%;
+  width: 100%;
   background-image: url("../images/gamer_couple.png");
   background-position: center;
-  background-size: cover;
+  background-size: contain;
   background-repeat: no-repeat;
 }
 
@@ -145,19 +148,26 @@ input[type="text"] {
 
 .login button {
   height: 20%;
-  width: 5vw;
   border: none;
-  background-color: #C3091E;
+  background-color: #1666a0;
   color: white;
   border-radius: 10px;
   cursor: pointer;
   outline: none;
 }
 
-.forgot_password {
+.password_forgot {
+  margin-top: 5px;
+}
+
+.password_forgot .forgot_password {
   text-decoration: none;
   font-size: 10px;
-  color: black;
+  color: #1666a0;
+}
+
+.password_error2 {
+  font-size: 14px;
 }
 
 .register_head {
@@ -186,7 +196,7 @@ input[type="text"] {
   width: 10vw;
   height: 4vh;
   color: white;
-  background-color: #3490dc;
+  background-color: #1666a0;
   font-size: 16px;
   cursor: pointer;
   border-radius: 10px;
@@ -227,6 +237,7 @@ input[type="text"] {
   font-size: 25px;
   -webkit-transition: 1s;
   transition: 1s;
+  border-radius: 10px;
 }
 
 .modal .modal_content {
@@ -257,5 +268,73 @@ input[type="text"] {
 span {
   color: #C3091E;
   font-weight: bold;
+}
+
+@media screen and (min-width: 1171px) {
+  .container .flex1 .flex1_top {
+    width: 60%;
+  }
+}
+
+@media screen and (min-width: 769px) and (max-width: 1170px) {
+  .container .flex1 .flex1_top {
+    width: 60%;
+    margin: 40% auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 768px) {
+  .container .flex1 .flex1_top {
+    width: 60%;
+    margin: 40% auto 0 auto;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .container .flex1 {
+    height: 30%;
+    width: 100%;
+  }
+  .container .flex1 .flex1_top {
+    width: 70%;
+    height: 70%;
+    margin: 7% auto 0 auto;
+  }
+  .container .flex1 .flex1_bottom {
+    display: none;
+  }
+  .container .flex2 {
+    height: 70%;
+    width: 100%;
+  }
+  .container .flex2 .flex2_top {
+    width: 100%;
+    padding-top: 5px;
+    height: 10%;
+  }
+  .login button {
+    width: 50px;
+    height: 30px;
+  }
+  .password_container {
+    margin-left: 0px;
+  }
+  .flex2_top input[type="email"], input[type="password"] {
+    width: 110px;
+  }
+  .container .flex2 .flex2_middle {
+    height: 80%;
+    margin-top: 10px;
+  }
+  .register_head {
+    font-size: 18px;
+  }
+  .register_content input[type="password"] {
+    width: 160px;
+  }
+  .register_button button {
+    width: auto;
+    margin: 5px;
+  }
 }
 /*# sourceMappingURL=landingpage.css.map */

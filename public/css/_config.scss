@@ -27,6 +27,10 @@ input[type="text"] {
     outline: none;
 }
 
+input[type="checkbox"] {
+
+}
+
 .debug {
     border: 1px solid blue;  
 }
@@ -43,7 +47,7 @@ $fontContentMedium: 18px;
 $FontContentSmall: 15px;
 
 // Colors
-$blue: #3490dc;
+$blue: #1666a0;
 $indigo: #6574cd;
 $purple: #9561e2;
 $pink: #f66D9b;
@@ -53,3 +57,29 @@ $yellow: #ffed4a;
 $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
+
+//Media Query Mixins
+@mixin mediaSm {
+    @media screen and (max-width: 500px) {
+        @content;
+    }
+}
+
+
+@mixin mediaMd {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mediaLg {
+    @media screen and (min-width: 769px) and (max-width: 1170px) {
+        @content;
+    }
+}
+
+@mixin mediaXl {
+    @media screen and (min-width: 1171px) {
+        @content;
+    }
+}

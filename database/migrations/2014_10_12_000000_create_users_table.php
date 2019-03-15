@@ -21,6 +21,10 @@ class CreateUsersTable extends Migration
             $table->string('password');
             $table->rememberToken();
             $table->timestamps();
+            // $table -> foreign('id') -> references('personal_id') -> on('personal_pages');
+            // $table -> foreign('id') -> references('id') -> on('personal_dates');
+            // $table -> foreign('id') -> references('id') -> on('personal_games');
+            // $table -> foreign('id') -> references('id') -> on('personal_events');
         });
     }
 

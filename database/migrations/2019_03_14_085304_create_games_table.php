@@ -18,7 +18,9 @@ class CreateGamesTable extends Migration
             $table->string('game_name',60);
             $table->string('game_genre',40);
             $table->string('game_image_url',50);
+            $table->string('game_extra',50)->nullable();
             $table->timestamps();
+            //$table -> foreign('game_id') -> references('game_id') -> on('personal_games');
         });
     }
 

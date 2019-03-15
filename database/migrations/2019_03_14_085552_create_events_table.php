@@ -18,9 +18,13 @@ class CreateEventsTable extends Migration
             $table->string('event_name',60);
             $table->date('event_date');
             $table->time('event_time');
+            $table->date('event_inschrijven_tm');
             $table->string('event_image_url',60);
+            $table->integer('event_count')->nullable();
             $table->text('event_description',400);
+            $table->string('event_extra',60)->nullable();
             $table->timestamps();
+            //$table -> foreign('event_id') -> references('event_id') -> on('personal_events');
         });
     }
 

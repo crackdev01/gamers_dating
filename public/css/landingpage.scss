@@ -5,21 +5,23 @@
     margin: 0;
     padding: 0;
     display: flex;
+    flex-wrap: wrap;
     width: 100%;
     height: 100%;
 
     .flex1 {
         height: 100%;
         width: 50%;
-        background-color: #C3091E;
+        background-color: $red;
 
         .flex1_top {
             width: 45%;
             height: 25%;
             margin: 20% auto 0 auto;
-            background-image: url('../images/logo3.jpg');
+            background-image: url('../images/logo_new.jpg');
             background-position: center center;
-            background-size: cover;
+            background-size: contain;
+            background-repeat: no-repeat;
         }
         .flex1_bottom {
             width: 50%;
@@ -27,7 +29,7 @@
             margin: 7% auto;
         }
         span {
-            color: #C3091E;
+            color: $red;
         }
         p {
             color: #fff;
@@ -59,10 +61,10 @@
         }
         .flex2_bottom {
             height: 30%;
-            width: 50%;
+            width: 100%;
             background-image: url("../images/gamer_couple.png");
             background-position: center;
-            background-size: cover;
+            background-size: contain;
             background-repeat: no-repeat;
         }
      
@@ -86,20 +88,30 @@
 
     button {
         height: 20%;
-        width: 5vw;
         border: none;
-        background-color: $red;
+        background-color: $blue;
         color: white;
         border-radius: 10px;
         cursor: pointer;
         outline: none;
     }
 }
-
+.password_forgot {
+    margin-top: 5px;
+    
 .forgot_password {
     text-decoration: none;
     font-size: 10px;
-    color: black;
+    color: $blue;
+    
+}
+}
+.password_error {
+    // max-width: 8vw !important;
+    // overflow: hidden;
+}
+.password_error2 {
+        font-size: 14px;
 }
 
 // classes for register.blade include
@@ -156,11 +168,13 @@
     color: white;
     font-size: 25px;
     transition: 1s;
+    border-radius: 10px;
    
   .modal_content {
         display: flex;
         flex-direction: column;
         transition: all 2s ease-out;
+        
     }
  }
   .close {
@@ -179,3 +193,6 @@ span {
     color: $red;
     font-weight: bold;
 }
+
+// Responsive
+@import 'mobile';
