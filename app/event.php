@@ -4,10 +4,11 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 
-class event extends Model
+class Event extends Model
 {
-    public function yourEvents() {
+    public function users()
+    {
+        return $this->belongsToMany('App\User');
         
-        return $this->hasMany(personal_event::class);
     }
 }

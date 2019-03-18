@@ -14,7 +14,7 @@ class CreateEventsTable extends Migration
     public function up()
     {
         Schema::create('events', function (Blueprint $table) {
-            $table->bigIncrements('event_id');
+            $table->bigIncrements('id');
             $table->string('event_name',60);
             $table->date('event_date');
             $table->time('event_time');
@@ -24,7 +24,6 @@ class CreateEventsTable extends Migration
             $table->text('event_description',400);
             $table->string('event_extra',60)->nullable();
             $table->timestamps();
-            //$table -> foreign('event_id') -> references('event_id') -> on('personal_events');
         });
     }
 

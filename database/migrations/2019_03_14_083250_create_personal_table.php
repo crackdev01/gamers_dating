@@ -13,9 +13,9 @@ class CreatePersonalTable extends Migration
      */
     public function up()
     {
-        Schema::create('personal_pages', function (Blueprint $table) {
+        Schema::create('personalpages', function (Blueprint $table) {
             $table->bigIncrements('personal_id')->unsigned();
-            $table->bigInteger('id')->unsigned();
+            $table->bigInteger('user_id')->unsigned();
             $table->string('personal_firstname',40);
             $table->string('personal_lastname',40);
             $table->string('personal_nickname',40);
@@ -29,7 +29,7 @@ class CreatePersonalTable extends Migration
             $table->string('personal_extra1',100)->nullable();
             $table->string('personal_extra2',100)->nullable();
             $table->timestamps();
-            $table -> foreign('id') -> references('id') -> on('users');
+            $table -> foreign('user_id') -> references('id') -> on('users');
         });
     }
 
@@ -40,6 +40,6 @@ class CreatePersonalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personal_pages');
+        Schema::dropIfExists('personalpages');
     }
 }

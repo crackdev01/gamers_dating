@@ -13,11 +13,11 @@ class CreatePersonalgamesTable extends Migration
      */
     public function up()
     {
-        Schema::create('personal_games', function (Blueprint $table) {
-            $table->bigInteger('id')->unsigned();
+        Schema::create('user_game', function (Blueprint $table) {
+            $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('game_id')->unsigned();
             $table->timestamps();
-            $table -> foreign('id') -> references('id') -> on('users');
+            $table -> foreign('user_id') -> references('id') -> on('users');
             $table -> foreign('game_id') -> references('game_id') -> on('games');
         });
     }
@@ -29,6 +29,6 @@ class CreatePersonalgamesTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personal_games');
+        Schema::dropIfExists('user_game');
     }
 }

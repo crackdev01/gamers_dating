@@ -13,12 +13,12 @@ class CreatePersonaleventTable extends Migration
      */
     public function up()
     {
-        Schema::create('personal_events', function (Blueprint $table) {
-            $table->bigInteger('id')->unsigned();
+        Schema::create('event_user', function (Blueprint $table) {
+            $table->bigInteger('user_id')->unsigned();
             $table->bigInteger('event_id')->unsigned();
             $table->timestamps();
-            $table -> foreign('id') -> references('id') -> on('users');
-            $table -> foreign('event_id') -> references('event_id') -> on('events');
+            $table -> foreign('user_id') -> references('id') -> on('users');
+            $table -> foreign('event_id') -> references('id') -> on('events');
         });
     }
 
@@ -29,6 +29,6 @@ class CreatePersonaleventTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('personal_event');
+        Schema::dropIfExists('event_user');
     }
 }
