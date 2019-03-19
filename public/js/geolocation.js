@@ -1,4 +1,4 @@
-document.getElementById('terms').addEventListener ("click", function(){
+document.getElementById('terms2').addEventListener ("click", function(){
     getPermission();
 });
 

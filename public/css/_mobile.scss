@@ -1,30 +1,154 @@
  // Widescreens
 @include mediaXl {
+    //landingpage:
     .container .flex1 .flex1_top {
         width: 60%;
     }
+
+    //homepage:
+    .home_container a h1 {
+        // font-size: 40px;
+        margin: 20px auto;
+    }
+
+        //logo and navbar:
+        .photo_container img {
+            width: 350px;
+        }
+
+        .menu .nav-link {
+            padding: 50px;
+            font-size: 20px;
+        }
+
 }
 
 // Desktops and Laptops
 @include mediaLg {
+    //landingpage:
     .container .flex1 .flex1_top {
         width: 60%;
         margin: 40% auto 0 auto;
     }
 
+    //landing page:
+    .container .flex1 .flex1_top {
+        width: 60%;
+        margin: 40% auto 0 auto;
+    }
+
+    //homepage:
+    .home_container a h1 {
+        // font-size: 40px;
+        margin: 20px auto;
+    }
+
+    //logo and navbar:
+    .photo_container img {
+        width: 300px;
+    }
+
+    .menu {
+        margin: 0%;
+
+        &-branding,
+        &-nav {
+            width: 50%;
+            height: 100vh; //100vh of screen so full screen
+        }
+
+        &-nav {
+            background: rgba(255, 255, 255, 1);
+        } 
+
+        ul.menu-nav,div.menu-branding {
+            float: none;
+            width: 100%;
+            min-height: 0;
+
+            &.show {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .menu-nav {
+            height: 100vh;
+            transform: translate3d(100%, 0, 0);
+            font-size: 24px;
+        }
+
+        .menu-branding {
+            height: 0vh;
+        }
+
+        .nav-link {
+            font-size: 40px;
+        }
+    }
 }
+
 
 // Tablets and Small laptops
 @include mediaMd {
+    //landing page:
     .container .flex1 .flex1_top {
         width: 60%;
         margin: 40% auto 0 auto;
     }
 
+    //homepage:
+    .home_container a h1 {
+        font-size: 40px;
+        margin: 20px auto;
+    }
+
+    //logo and navbar:
+    .photo_container img {
+        width: 300px;
+    }
+
+    .menu {
+        margin: 0%;
+
+        &-branding,
+        &-nav {
+            width: 50%;
+            height: 100vh; //100vh of screen so full screen
+        }
+
+        &-nav {
+            background: rgba(255, 255, 255, 1);
+        } 
+
+        ul.menu-nav,div.menu-branding {
+            float: none;
+            width: 100%;
+            min-height: 0;
+
+            &.show {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .menu-nav {
+            height: 100vh;
+            transform: translate3d(100%, 0, 0);
+            font-size: 24px;
+        }
+
+        .menu-branding {
+            height: 0vh;
+        }
+
+        .nav-link {
+            font-size: 40px;
+        }
+    }
 }
 
 // Smartphones
 @include mediaSm {
+    //landingpage:
     .container .flex1 {
         height: 30%;
         width: 100%;
@@ -53,7 +177,6 @@
     .login button {
         width: 50px;
         height: 30px;
-        // margin: 0 10px 0 10px;
     }
 
     .password_container {
@@ -71,7 +194,6 @@
 
     .register_head {
         font-size: 18px;
-        // margin: 0;
     }
 
     .register_content input[type="password"] {
@@ -81,6 +203,105 @@
     .register_button button {
         width: auto;
         margin: 5px;
+    }
+
+    //homepage:
+    .home_container a h1 {
+        font-size: 30px;
+        margin: 50px auto;
+    }
+
+    //navbar:
+    .photo_container img {
+        width: 230px;
+    }
+
+    .menu {
+        margin: 0%;
+    
+        &-branding, //navigation text on menu button
+        &-nav {
+            width: 50%;
+            height: 100vh; //100vh of screen so full screen
+        }
+
+        &-nav {
+            background: rgba(255, 255, 255, 1);
+        } 
+
+        ul.menu-nav,div.menu-branding {
+            float: none;
+            width: 100%;
+            min-height: 0;
+        }
+
+        .menu-nav {
+            height: 100vh;
+            transform: translate3d(100%, 0, 0);
+            font-size: 24px;
+        }
+
+        .menu-branding {
+            height: 0vh;
+            transform: translate3d(100%, 0, 0);
+        }
+
+        .nav-link {
+            font-size: 20px;
+        }
+    }
+}
+
+@include mediaXs {
+   
+    //homepage:
+    .home_container a h1 {
+        // font-size: 40px;
+        margin: 35px auto;
+        font-size: 30px;
+    }
+
+    //logo and navbar:
+    .photo_container img {
+        width: 180px;
+    }
+
+    .menu {
+        margin: 0%;
+
+        &-branding,
+        &-nav {
+            width: 50%;
+            height: 100vh; //100vh of screen so full screen
+        }
+
+        &-nav {
+            background: rgba(255, 255, 255, 1);
+        } 
+
+        ul.menu-nav,div.menu-branding {
+            float: none;
+            width: 100%;
+            min-height: 0;
+
+            &.show {
+                transform: translate3d(0, 0, 0);
+            }
+        }
+
+        .menu-nav {
+            height: 100vh;
+            transform: translate3d(100%, 0, 0);
+            font-size: 24px;
+        }
+
+        .menu-branding {
+            height: 0vh;
+        }
+
+        .nav-link {
+            font-size: 20px;
+        }
     }
 
 }

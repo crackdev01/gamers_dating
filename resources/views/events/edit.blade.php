@@ -26,7 +26,7 @@
             </div>
         </div>
         <div>
-            <label class="label" for="event_name">Title</label>
+            <label class="label" for="event_inschrijven_tm">Title</label>
             <div>
                 <input type="text" name="event_inschrijven_tm" placeholder="inschrijven t/m" value="{{ $event->event_inschrijven_tm }}">
             </div>
@@ -56,6 +56,7 @@
     @method('DELETE')
     @csrf
     <button type="submit">Delete event</button>
-</form>    
+</form>   
+<a href="/events/">Home</a>  
 
 @endsection

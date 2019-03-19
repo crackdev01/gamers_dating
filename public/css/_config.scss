@@ -28,7 +28,8 @@ input[type="text"] {
 }
 
 input[type="checkbox"] {
-    // visibility: hidden;
+    
+    
 }
 
 .debug {
@@ -58,7 +59,18 @@ $green: #38c172;
 $teal: #4dc0b5;
 $cyan: #6cb2eb;
 
+@mixin easeOut {
+    transition: all 0.5s ease-out;
+}
+
 //Media Query Mixins
+@mixin mediaXs {
+    @media screen and (min-width: 300px) and (max-width: 361px) {
+        @content;
+    }
+}
+
+
 @mixin mediaSm {
     @media screen and (max-width: 500px) {
         @content;

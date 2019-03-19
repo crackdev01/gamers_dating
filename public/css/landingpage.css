@@ -166,6 +166,10 @@ input[type="text"] {
   color: #1666a0;
 }
 
+.password_error {
+  max-width: 6vw !important;
+}
+
 .password_error2 {
   font-size: 14px;
 }
@@ -204,7 +208,25 @@ input[type="text"] {
 }
 
 #terms {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
   font-size: 12px;
+}
+
+#terms #terms2 {
+  cursor: pointer;
+  color: black;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  width: 200%;
+}
+
+#terms #terms2:hover {
+  color: red;
 }
 
 .modal {
@@ -274,6 +296,16 @@ span {
   .container .flex1 .flex1_top {
     width: 60%;
   }
+  .home_container a h1 {
+    margin: 20px auto;
+  }
+  .photo_container img {
+    width: 350px;
+  }
+  .menu .nav-link {
+    padding: 50px;
+    font-size: 20px;
+  }
 }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
@@ -281,12 +313,91 @@ span {
     width: 60%;
     margin: 40% auto 0 auto;
   }
+  .container .flex1 .flex1_top {
+    width: 60%;
+    margin: 40% auto 0 auto;
+  }
+  .home_container a h1 {
+    margin: 20px auto;
+  }
+  .photo_container img {
+    width: 300px;
+  }
+  .menu {
+    margin: 0%;
+  }
+  .menu-branding, .menu-nav {
+    width: 50%;
+    height: 100vh;
+  }
+  .menu-nav {
+    background: white;
+  }
+  .menu ul.menu-nav, .menu div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+  }
+  .menu ul.menu-nav.show, .menu div.menu-branding.show {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .menu .menu-nav {
+    height: 100vh;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+    font-size: 24px;
+  }
+  .menu .menu-branding {
+    height: 0vh;
+  }
+  .menu .nav-link {
+    font-size: 40px;
+  }
 }
 
 @media screen and (max-width: 768px) {
   .container .flex1 .flex1_top {
     width: 60%;
     margin: 40% auto 0 auto;
+  }
+  .home_container a h1 {
+    font-size: 40px;
+    margin: 20px auto;
+  }
+  .photo_container img {
+    width: 300px;
+  }
+  .menu {
+    margin: 0%;
+  }
+  .menu-branding, .menu-nav {
+    width: 50%;
+    height: 100vh;
+  }
+  .menu-nav {
+    background: white;
+  }
+  .menu ul.menu-nav, .menu div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+  }
+  .menu ul.menu-nav.show, .menu div.menu-branding.show {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .menu .menu-nav {
+    height: 100vh;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+    font-size: 24px;
+  }
+  .menu .menu-branding {
+    height: 0vh;
+  }
+  .menu .nav-link {
+    font-size: 40px;
   }
 }
 
@@ -335,6 +446,83 @@ span {
   .register_button button {
     width: auto;
     margin: 5px;
+  }
+  .home_container a h1 {
+    font-size: 30px;
+    margin: 50px auto;
+  }
+  .photo_container img {
+    width: 230px;
+  }
+  .menu {
+    margin: 0%;
+  }
+  .menu-branding, .menu-nav {
+    width: 50%;
+    height: 100vh;
+  }
+  .menu-nav {
+    background: white;
+  }
+  .menu ul.menu-nav, .menu div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+  }
+  .menu .menu-nav {
+    height: 100vh;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+    font-size: 24px;
+  }
+  .menu .menu-branding {
+    height: 0vh;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+  }
+  .menu .nav-link {
+    font-size: 20px;
+  }
+}
+
+@media screen and (min-width: 300px) and (max-width: 361px) {
+  .home_container a h1 {
+    margin: 35px auto;
+    font-size: 30px;
+  }
+  .photo_container img {
+    width: 180px;
+  }
+  .menu {
+    margin: 0%;
+  }
+  .menu-branding, .menu-nav {
+    width: 50%;
+    height: 100vh;
+  }
+  .menu-nav {
+    background: white;
+  }
+  .menu ul.menu-nav, .menu div.menu-branding {
+    float: none;
+    width: 100%;
+    min-height: 0;
+  }
+  .menu ul.menu-nav.show, .menu div.menu-branding.show {
+    -webkit-transform: translate3d(0, 0, 0);
+            transform: translate3d(0, 0, 0);
+  }
+  .menu .menu-nav {
+    height: 100vh;
+    -webkit-transform: translate3d(100%, 0, 0);
+            transform: translate3d(100%, 0, 0);
+    font-size: 24px;
+  }
+  .menu .menu-branding {
+    height: 0vh;
+  }
+  .menu .nav-link {
+    font-size: 20px;
   }
 }
 /*# sourceMappingURL=landingpage.css.map */

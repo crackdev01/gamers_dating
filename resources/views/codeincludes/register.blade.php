@@ -58,7 +58,7 @@
                 </div>
             </div>
             <div id="terms">
-                <input type="checkbox" required>agree with our terms.
+                <input type="checkbox" checked="checked" required><span id="terms2">agree with our terms.</span>
             </div>
 
             <div class="register_button">

@@ -30,7 +30,8 @@
             <textarea name="event_description" placeholder="Event description"></textarea>
         </div>
         <button type="submit">Create event</button>
-    </form>    
+    </form>   
+    <a href="/events/">Home</a>  
     
 </body>
 </html>

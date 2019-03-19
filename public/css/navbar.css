@@ -30,13 +30,13 @@ input[type="text"] {
 }
 
 .container {
-  width: 100vw;
-  height: 100vh;
+  width: 100%;
+  height: auto;
 }
 
 .container .navbar_container {
   width: 100%;
-  height: 10%;
+  height: 15%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -51,7 +51,7 @@ input[type="text"] {
           justify-content: flex-end;
   -ms-flex-item-align: center;
       align-self: center;
-  width: 55%;
+  width: 60%;
   height: 100%;
   margin: 0 auto;
   padding-top: 20px;
@@ -65,7 +65,7 @@ input[type="text"] {
 }
 
 .container .navbar_container .hamburger_container {
-  width: 45%;
+  width: 40%;
   display: inline-block;
 }
 
@@ -112,6 +112,41 @@ input[type="text"] {
   padding: 0;
 }
 
+.container .navbar_container .hamburger_container .logout ul #one {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  -webkit-transition: 2.1s;
+  transition: 2.1s;
+}
+
+.container .navbar_container .hamburger_container .logout ul #two {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  -webkit-transition: 1.7s;
+  transition: 1.7s;
+}
+
+.container .navbar_container .hamburger_container .logout ul #three {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  -webkit-transition: 1.3s;
+  transition: 1.3s;
+}
+
+.container .navbar_container .hamburger_container .logout ul #four {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  -webkit-transition: 0.9s;
+  transition: 0.9s;
+}
+
+.container .navbar_container .hamburger_container .logout ul #five {
+  -webkit-transform: translateY(-100px);
+          transform: translateY(-100px);
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
 .container .navbar_container .hamburger_container .logout ul span {
   width: 10%;
   display: inline-block;
@@ -134,13 +169,32 @@ input[type="text"] {
 }
 
 .container .navbar_container .hamburger_container #hamburger_menu {
-  display: inline-block;
   height: 75%;
   width: 10%;
+  margin-top: 13px;
   float: right;
-  background-image: url("../images/hamburger_logo4.png");
-  background-size: contain;
-  background-repeat: no-repeat;
   cursor: pointer;
+}
+
+.container .navbar_container .hamburger_container #hamburger_menu .bar1, .container .navbar_container .hamburger_container #hamburger_menu .bar2, .container .navbar_container .hamburger_container #hamburger_menu .bar3 {
+  width: 60%;
+  height: 5px;
+  background-color: black;
+  margin: 3px 0;
+}
+
+.container .navbar_container .hamburger_container #hamburger_menu #bar1 {
+  -webkit-transition: 1.2s;
+  transition: 1.2s;
+}
+
+.container .navbar_container .hamburger_container #hamburger_menu #bar2 {
+  -webkit-transition: 1.2s;
+  transition: 1.2s;
+}
+
+.container .navbar_container .hamburger_container #hamburger_menu #bar3 {
+  -webkit-transition: 1.2s;
+  transition: 1.2s;
 }
 /*# sourceMappingURL=navbar.css.map */

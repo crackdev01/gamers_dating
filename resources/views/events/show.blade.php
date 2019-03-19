@@ -33,6 +33,14 @@
 
         <p>
         <a href="/events/{{ $event->id }}/edit">Edit</a>
-        </p>    
+        </p>   
+        <form method="POST" action="/events/{{ $event->id }}">       
+            {{-- {{ method_field('DELETE') }}
+            {{ csrf_field() }} --}}
+            @method('DELETE')
+            @csrf
+            <button type="submit">Delete event</button>
+        </form>   
+        <a href="/events/">Home</a>   
 
 @endsection    
