@@ -6,46 +6,77 @@
     }
 
     //homepage:
-    .home_container a h1 {
-        // font-size: 40px;
-        margin: 20px auto;
+    .home_container {
+        margin: 70px auto;
+    
+        a h1 {
+            // font-size: 40px;
+            margin: 20px auto;
+        }
     }
 
         //logo and navbar:
         .photo_container img {
-            width: 350px;
+            width: 35%;
         }
 
         .menu .nav-link {
             padding: 50px;
             font-size: 20px;
         }
-
 }
 
 // Desktops and Laptops
 @include mediaLg {
-    //landingpage:
-    .container .flex1 .flex1_top {
-        width: 60%;
-        margin: 40% auto 0 auto;
-    }
-
     //landing page:
-    .container .flex1 .flex1_top {
-        width: 60%;
-        margin: 40% auto 0 auto;
+    .container_landing {
+        .flex1 {
+            .flex1_top{
+                width: 80%;
+                margin: 40% auto 0 auto;
+            }
+            .flex1_bottom {
+                margin: 0 auto;
+                p {
+                    font-size: 20px;
+                }
+            }
+        }
+        .flex2 {
+            .flex2_top{
+                .flex2_top-input{
+                    input[type="email"], input[type="password"] {
+                        width: 170px;
+                        font-size: 16px;
+                    }
+                }
+            }
+            .flex2_middle {
+                .register_head {
+                }
+                .register_content {
+                }
+            }
+        }
     }
 
     //homepage:
-    .home_container a h1 {
-        // font-size: 40px;
-        margin: 20px auto;
+    html {
+        background-position-y: 200px;
+        background-position-x: 25px;
+    }
+    .home_container {
+        margin: 70px auto;
+
+        a h1 {
+            // font-size: 40px;
+            margin: 20px auto;
+        }
     }
 
     //logo and navbar:
     .photo_container img {
-        width: 300px;
+        width: 70%;
     }
 
     .menu {
@@ -54,11 +85,15 @@
         &-branding,
         &-nav {
             width: 50%;
-            height: 100vh; //100vh of screen so full screen
+            height: 100vh; //full height screen
         }
 
         &-nav {
             background: rgba(255, 255, 255, 1);
+            background-image:  url("/images/zelda_background.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
         } 
 
         ul.menu-nav,div.menu-branding {
@@ -91,20 +126,55 @@
 // Tablets and Small laptops
 @include mediaMd {
     //landing page:
-    .container .flex1 .flex1_top {
-        width: 60%;
-        margin: 40% auto 0 auto;
+    .container_landing {
+        .flex1 {
+            .flex1_top{
+                width: 80%;
+                margin: 40% auto 0 auto;
+            }
+            .flex1_bottom {
+                margin: 0 auto;
+                p {
+                    font-size: 16px;
+                }
+            }
+        }
+        .flex2 {
+            .flex2_top{
+                .flex2_top-input{
+                    input[type="email"], input[type="password"] {
+                        width: 100px;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .flex2_middle {
+                .register_head {
+                }
+                .register_content {
+                }
+            }
+        }
     }
 
     //homepage:
-    .home_container a h1 {
-        font-size: 40px;
-        margin: 20px auto;
+
+    html {
+        background-position-y: 150px;
+        background-position-x: 25px;
+    }
+    .home_container {
+        margin: 60px auto;
+
+        a h1 {
+            font-size: 40px;
+            margin: 20px auto;
+        } 
     }
 
     //logo and navbar:
     .photo_container img {
-        width: 300px;
+        width: 100%;
     }
 
     .menu {
@@ -112,12 +182,15 @@
 
         &-branding,
         &-nav {
-            width: 50%;
-            height: 100vh; //100vh of screen so full screen
+            height: 100vh; //full height screen
         }
 
         &-nav {
             background: rgba(255, 255, 255, 1);
+            background-image:  url("/images/zelda_background.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
         } 
 
         ul.menu-nav,div.menu-branding {
@@ -133,7 +206,6 @@
         .menu-nav {
             height: 100vh;
             transform: translate3d(100%, 0, 0);
-            font-size: 24px;
         }
 
         .menu-branding {
@@ -141,92 +213,114 @@
         }
 
         .nav-link {
-            font-size: 40px;
+            font-size: 35px;
         }
     }
 }
-
+ 
 // Smartphones
 @include mediaSm {
-    //landingpage:
-    .container .flex1 {
-        height: 30%;
-        width: 100%;
-    }
-
-    .container .flex1 .flex1_top {
-        width: 70%;
-        height: 70%;
-        margin: 7% auto 0 auto;
-    }
-
-    .container .flex1 .flex1_bottom {
-        display: none;
-    }
-
-    .container .flex2 {
-        height: 70%;
-        width: 100%;
-    }
-
-    .container .flex2 .flex2_top {
-        width: 100%;
-        padding-top: 5px;
-        height: 10%;
-    }
-    .login button {
-        width: 50px;
-        height: 30px;
-    }
-
-    .password_container {
-        margin-left: 0px;
-    }
-
-    .flex2_top input[type="email"], input[type="password"] {
-        width: 110px;
-    }
-
-    .container .flex2 .flex2_middle {
-        height: 80%;
-        margin-top: 10px;
-    }
-
-    .register_head {
-        font-size: 18px;
-    }
-
-    .register_content input[type="password"] {
-        width: 160px;
-    }
-
-    .register_button button {
-        width: auto;
-        margin: 5px;
+    .container_landing {
+        .flex1 {
+            height: 20vh;
+            width: 100%;
+            .flex1_top{
+                width: 70%;
+                height: 70%;
+                margin: 5% auto;
+            }
+            .flex1_bottom {
+                display: none;
+            }
+        }
+        .flex2 {
+            width: 100%;
+            height: 80vh;
+            .flex2_top{
+                width: 100%;
+                padding-top: 5px;
+                height: 10vh;
+                .flex2_top-input{
+                    input[type="email"], input[type="password"] {
+                        width: 100px;
+                        font-size: 14px;
+                    }
+                }
+            }
+            .flex2_middle {
+                height: 50vh;
+                margin-top: 10px;
+                .register_head {
+                    margin: 0px;
+                }
+                .register_content {
+                    height: 40vh;
+                    margin: 10px auto;
+                }
+            }
+        }
     }
 
     //homepage:
-    .home_container a h1 {
-        font-size: 30px;
+    
+    .home_container { 
         margin: 50px auto;
-    }
 
+        a h1 {
+            font-size: 25px;
+            margin: 0 auto;
+        }
+
+        a.link_personal, .home_container-link1 {
+            margin: 15px 20%;   
+
+            h1 {
+                font-size: 25px;
+            }
+        }
+
+        a.link_chat, .home_container-link2 {
+                margin: 15px 20%;
+
+                h1 {
+                    font-size: 25px;
+                }
+            }
+
+        a.link_events, .home_container-link3 {
+                margin: 15px 20%;
+
+                h1 {
+                    font-size: 25px;
+                }
+            }
+    }
+    
     //navbar:
     .photo_container img {
-        width: 230px;
+        width: 100%;
+    }
+
+    .menu-btn {
+        right: 30px;
+        top: 30px;
     }
 
     .menu {
         margin: 0%;
     
-        &-branding, //navigation text on menu button
+        &-branding,
         &-nav {
             width: 50%;
-            height: 100vh; //100vh of screen so full screen
+            height: 100vh;
         }
 
         &-nav {
             background: rgba(255, 255, 255, 1);
+            background-image:  url("/images/zelda_background.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
         } 
 
         ul.menu-nav,div.menu-branding {
@@ -253,17 +347,61 @@
 }
 
 @include mediaXs {
+    //landingpage:
+    .container_landing {
+        .flex2 {
+            .flex2_top{
+                .flex2_top-input{
+                    input[type="email"], input[type="password"] {
+                        width: 100px;
+                        font-size: 12px;
+                        color: $blue;
+                    }
+                }
+            }
+            .flex2_middle {
+                height: 50vh;
+                margin-top: 10px;
+                .register_head {
+                    margin-top: 0px;
+                }
+                .register_content {
+                    height: 40vh;
+                    margin: 10px auto;
+                }
+            }
+        }
+    }
    
     //homepage:
-    .home_container a h1 {
-        // font-size: 40px;
-        margin: 35px auto;
-        font-size: 30px;
+    .home_container { 
+    margin: 40px auto;
+
+        a h1 {
+            font-size: 20px;
+        }
+
+        a.link_personal, .home_container-link1 {
+            margin: 15px 20%;   
+        }
+
+        a.link_chat, .home_container-link2 {
+            margin: 15px 20%;
+        }
+
+        a.link_events, .home_container-link3 {
+            margin: 15px 20%;
+        }
     }
 
     //logo and navbar:
     .photo_container img {
-        width: 180px;
+        width: 100%;
+    }
+
+    .menu-btn {
+        right: 25px;
+        top: 30px;
     }
 
     .menu {
@@ -272,11 +410,15 @@
         &-branding,
         &-nav {
             width: 50%;
-            height: 100vh; //100vh of screen so full screen
+            height: 100vh;
         }
 
         &-nav {
             background: rgba(255, 255, 255, 1);
+            background-image:  url("/images/zelda_background.jpg");
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
         } 
 
         ul.menu-nav,div.menu-branding {
@@ -303,5 +445,4 @@
             font-size: 20px;
         }
     }
-
 }

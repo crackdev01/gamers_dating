@@ -15,6 +15,7 @@
 @yield('name/logo')
 @yield('login')
 @yield('registerform')
+@yield('agreement')
 
 <!-- included on homepage only -->
 @yield('homepageLinks')

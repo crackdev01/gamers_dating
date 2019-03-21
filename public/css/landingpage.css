@@ -7,29 +7,11 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-input[type="password"] {
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-}
-
-input[type="email"] {
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-}
-
-input[type="text"] {
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-}
-
 .debug {
   border: 1px solid blue;
 }
 
-.container {
+.container_landing {
   margin: 0;
   padding: 0;
   display: -webkit-box;
@@ -38,16 +20,16 @@ input[type="text"] {
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
-  height: 100%;
+  height: 100vh;
 }
 
-.container .flex1 {
-  height: 100%;
+.container_landing .flex1 {
+  height: 100vh;
   width: 50%;
   background-color: #C3091E;
 }
 
-.container .flex1 .flex1_top {
+.container_landing .flex1 .flex1_top {
   width: 45%;
   height: 25%;
   margin: 20% auto 0 auto;
@@ -57,128 +39,84 @@ input[type="text"] {
   background-repeat: no-repeat;
 }
 
-.container .flex1 .flex1_bottom {
+.container_landing .flex1 .flex1_bottom {
   width: 50%;
   height: 20%;
   margin: 7% auto;
 }
 
-.container .flex1 span {
-  color: #C3091E;
-}
-
-.container .flex1 p {
+.container_landing .flex1 .flex1_bottom p {
   color: #fff;
   text-align: center;
   font-size: 16px;
 }
 
-.container .flex2 {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+.container_landing .flex2 {
   height: 100vh;
   width: 50%;
 }
 
-.container .flex2 .flex2_top {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: end;
-      -ms-flex-pack: end;
-          justify-content: flex-end;
-  width: 50vw;
-  height: 20vh;
-  padding-top: 10px;
-}
-
-.container .flex2 .flex2_middle {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  height: 65%;
-}
-
-.container .flex2 .flex2_bottom {
-  height: 30%;
+.container_landing .flex2 .flex2_top {
+  height: 10vh;
   width: 100%;
-  background-image: url("../images/gamer_couple.png");
-  background-position: center;
-  background-size: contain;
-  background-repeat: no-repeat;
 }
 
-.password_container {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  -webkit-box-align: left;
-      -ms-flex-align: left;
-          align-items: left;
-  height: 20vh;
-  padding-left: 20px;
-  padding-right: 20px;
+.container_landing .flex2 .flex2_top .flex2_top-input {
+  float: right;
 }
 
-.login {
-  padding-right: 20px;
+.container_landing .flex2 .flex2_top .flex2_top-input input[type="email"], .container_landing .flex2 .flex2_top .flex2_top-input [type="password"] {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+  font-size: 16px;
+  margin: 5px 20px 0px 0;
+  max-width: 170px;
 }
 
-.login button {
-  height: 20%;
+.container_landing .flex2 .flex2_top .flex2_top-input .invalid-feedback {
+  font-size: 12px;
+  color: #C3091E;
+}
+
+.container_landing .flex2 .flex2_top .flex2_top-input .forgot_password {
+  text-decoration: none;
+  font-size: 12px;
+  color: #1666a0;
+  float: right;
+  margin: 0 10px 0 0;
+}
+
+.container_landing .flex2 .flex2_top .flex2_top-input .login {
   border: none;
   background-color: #1666a0;
   color: white;
   border-radius: 10px;
   cursor: pointer;
   outline: none;
+  font-size: 16px;
+  padding: 4px 6px 4px 6px;
+  margin: 5px 10px 0 0;
+  float: right;
 }
 
-.password_forgot {
-  margin-top: 5px;
+.container_landing .flex2 .flex2_middle {
+  height: 50vh;
+  width: 100%;
 }
 
-.password_forgot .forgot_password {
-  text-decoration: none;
-  font-size: 10px;
-  color: #1666a0;
-}
-
-.password_error {
-  max-width: 6vw !important;
-}
-
-.password_error2 {
-  font-size: 14px;
-}
-
-.register_head {
+.container_landing .flex2 .flex2_middle .register_head {
+  text-align: center;
   font-size: 26px;
+  margin-top: 60px;
+  color: #1666a0;
+  font-weight: bold;
 }
 
-.register_content {
+.container_landing .flex2 .flex2_middle .register_content {
+  width: 150px;
+  margin: 20px auto;
+  height: 40vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -186,25 +124,48 @@ input[type="text"] {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-  width: 100%;
-  height: 100%;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
 }
 
-.register_button button {
+.container_landing .flex2 .flex2_middle .register_content span {
+  color: #C3091E;
+  font-weight: bold;
+}
+
+.container_landing .flex2 .flex2_middle .register_content input[type="text"], .container_landing .flex2 .flex2_middle .register_content input[type="email"], .container_landing .flex2 .flex2_middle .register_content [type="password"] {
   border: none;
-  width: 10vw;
-  height: 4vh;
+  border-bottom: 1px solid black;
+  outline: none;
+  font-size: 16px;
+  max-width: 170px;
+  margin: 0 auto;
+}
+
+.container_landing .flex2 .flex2_middle .register_content .invalid-feedback {
+  font-size: 12px;
+  color: #C3091E;
+}
+
+.container_landing .flex2 .flex2_middle .register_content .register_button {
+  border: none;
   color: white;
   background-color: #1666a0;
   font-size: 16px;
   cursor: pointer;
   border-radius: 10px;
   outline: none;
+  padding: 4px 6px 4px 6px;
+}
+
+.container_landing .flex2 .flex2_bottom {
+  height: 30vh;
+  width: 100%;
+  background-image: url("../images/gamer_couple.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
 }
 
 #terms {
@@ -287,20 +248,18 @@ input[type="text"] {
   cursor: pointer;
 }
 
-span {
-  color: #C3091E;
-  font-weight: bold;
-}
-
 @media screen and (min-width: 1171px) {
   .container .flex1 .flex1_top {
     width: 60%;
+  }
+  .home_container {
+    margin: 70px auto;
   }
   .home_container a h1 {
     margin: 20px auto;
   }
   .photo_container img {
-    width: 350px;
+    width: 35%;
   }
   .menu .nav-link {
     padding: 50px;
@@ -309,19 +268,32 @@ span {
 }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
-  .container .flex1 .flex1_top {
-    width: 60%;
+  .container_landing .flex1 .flex1_top {
+    width: 80%;
     margin: 40% auto 0 auto;
   }
-  .container .flex1 .flex1_top {
-    width: 60%;
-    margin: 40% auto 0 auto;
+  .container_landing .flex1 .flex1_bottom {
+    margin: 0 auto;
+  }
+  .container_landing .flex1 .flex1_bottom p {
+    font-size: 20px;
+  }
+  .container_landing .flex2 .flex2_top .flex2_top-input input[type="email"], .container_landing .flex2 .flex2_top .flex2_top-input input[type="password"] {
+    width: 170px;
+    font-size: 16px;
+  }
+  html {
+    background-position-y: 200px;
+    background-position-x: 25px;
+  }
+  .home_container {
+    margin: 70px auto;
   }
   .home_container a h1 {
     margin: 20px auto;
   }
   .photo_container img {
-    width: 300px;
+    width: 70%;
   }
   .menu {
     margin: 0%;
@@ -332,6 +304,10 @@ span {
   }
   .menu-nav {
     background: white;
+    background-image: url("/images/zelda_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .menu ul.menu-nav, .menu div.menu-branding {
     float: none;
@@ -357,26 +333,46 @@ span {
 }
 
 @media screen and (max-width: 768px) {
-  .container .flex1 .flex1_top {
-    width: 60%;
+  .container_landing .flex1 .flex1_top {
+    width: 80%;
     margin: 40% auto 0 auto;
+  }
+  .container_landing .flex1 .flex1_bottom {
+    margin: 0 auto;
+  }
+  .container_landing .flex1 .flex1_bottom p {
+    font-size: 16px;
+  }
+  .container_landing .flex2 .flex2_top .flex2_top-input input[type="email"], .container_landing .flex2 .flex2_top .flex2_top-input input[type="password"] {
+    width: 100px;
+    font-size: 14px;
+  }
+  html {
+    background-position-y: 150px;
+    background-position-x: 25px;
+  }
+  .home_container {
+    margin: 60px auto;
   }
   .home_container a h1 {
     font-size: 40px;
     margin: 20px auto;
   }
   .photo_container img {
-    width: 300px;
+    width: 100%;
   }
   .menu {
     margin: 0%;
   }
   .menu-branding, .menu-nav {
-    width: 50%;
     height: 100vh;
   }
   .menu-nav {
     background: white;
+    background-image: url("/images/zelda_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .menu ul.menu-nav, .menu div.menu-branding {
     float: none;
@@ -391,68 +387,83 @@ span {
     height: 100vh;
     -webkit-transform: translate3d(100%, 0, 0);
             transform: translate3d(100%, 0, 0);
-    font-size: 24px;
   }
   .menu .menu-branding {
     height: 0vh;
   }
   .menu .nav-link {
-    font-size: 40px;
+    font-size: 35px;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .container .flex1 {
-    height: 30%;
+  .container_landing .flex1 {
+    height: 20vh;
     width: 100%;
   }
-  .container .flex1 .flex1_top {
+  .container_landing .flex1 .flex1_top {
     width: 70%;
     height: 70%;
-    margin: 7% auto 0 auto;
+    margin: 5% auto;
   }
-  .container .flex1 .flex1_bottom {
+  .container_landing .flex1 .flex1_bottom {
     display: none;
   }
-  .container .flex2 {
-    height: 70%;
+  .container_landing .flex2 {
     width: 100%;
+    height: 80vh;
   }
-  .container .flex2 .flex2_top {
+  .container_landing .flex2 .flex2_top {
     width: 100%;
     padding-top: 5px;
-    height: 10%;
+    height: 10vh;
   }
-  .login button {
-    width: 50px;
-    height: 30px;
+  .container_landing .flex2 .flex2_top .flex2_top-input input[type="email"], .container_landing .flex2 .flex2_top .flex2_top-input input[type="password"] {
+    width: 100px;
+    font-size: 14px;
   }
-  .password_container {
-    margin-left: 0px;
-  }
-  .flex2_top input[type="email"], input[type="password"] {
-    width: 110px;
-  }
-  .container .flex2 .flex2_middle {
-    height: 80%;
+  .container_landing .flex2 .flex2_middle {
+    height: 50vh;
     margin-top: 10px;
   }
-  .register_head {
-    font-size: 18px;
+  .container_landing .flex2 .flex2_middle .register_head {
+    margin: 0px;
   }
-  .register_content input[type="password"] {
-    width: 160px;
+  .container_landing .flex2 .flex2_middle .register_content {
+    height: 40vh;
+    margin: 10px auto;
   }
-  .register_button button {
-    width: auto;
-    margin: 5px;
-  }
-  .home_container a h1 {
-    font-size: 30px;
+  .home_container {
     margin: 50px auto;
   }
+  .home_container a h1 {
+    font-size: 25px;
+    margin: 0 auto;
+  }
+  .home_container a.link_personal, .home_container .home_container-link1 {
+    margin: 15px 20%;
+  }
+  .home_container a.link_personal h1, .home_container .home_container-link1 h1 {
+    font-size: 25px;
+  }
+  .home_container a.link_chat, .home_container .home_container-link2 {
+    margin: 15px 20%;
+  }
+  .home_container a.link_chat h1, .home_container .home_container-link2 h1 {
+    font-size: 25px;
+  }
+  .home_container a.link_events, .home_container .home_container-link3 {
+    margin: 15px 20%;
+  }
+  .home_container a.link_events h1, .home_container .home_container-link3 h1 {
+    font-size: 25px;
+  }
   .photo_container img {
-    width: 230px;
+    width: 100%;
+  }
+  .menu-btn {
+    right: 30px;
+    top: 30px;
   }
   .menu {
     margin: 0%;
@@ -463,6 +474,10 @@ span {
   }
   .menu-nav {
     background: white;
+    background-image: url("/images/zelda_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .menu ul.menu-nav, .menu div.menu-branding {
     float: none;
@@ -486,12 +501,43 @@ span {
 }
 
 @media screen and (min-width: 300px) and (max-width: 361px) {
+  .container_landing .flex2 .flex2_top .flex2_top-input input[type="email"], .container_landing .flex2 .flex2_top .flex2_top-input input[type="password"] {
+    width: 100px;
+    font-size: 12px;
+    color: #1666a0;
+  }
+  .container_landing .flex2 .flex2_middle {
+    height: 50vh;
+    margin-top: 10px;
+  }
+  .container_landing .flex2 .flex2_middle .register_head {
+    margin-top: 0px;
+  }
+  .container_landing .flex2 .flex2_middle .register_content {
+    height: 40vh;
+    margin: 10px auto;
+  }
+  .home_container {
+    margin: 40px auto;
+  }
   .home_container a h1 {
-    margin: 35px auto;
-    font-size: 30px;
+    font-size: 20px;
+  }
+  .home_container a.link_personal, .home_container .home_container-link1 {
+    margin: 15px 20%;
+  }
+  .home_container a.link_chat, .home_container .home_container-link2 {
+    margin: 15px 20%;
+  }
+  .home_container a.link_events, .home_container .home_container-link3 {
+    margin: 15px 20%;
   }
   .photo_container img {
-    width: 180px;
+    width: 100%;
+  }
+  .menu-btn {
+    right: 25px;
+    top: 30px;
   }
   .menu {
     margin: 0%;
@@ -502,6 +548,10 @@ span {
   }
   .menu-nav {
     background: white;
+    background-image: url("/images/zelda_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .menu ul.menu-nav, .menu div.menu-branding {
     float: none;

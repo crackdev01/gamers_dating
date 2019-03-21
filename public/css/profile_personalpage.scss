@@ -1,79 +1,294 @@
 // Variables
 @import 'config';
 
+input[type="password"] {
+
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+
+input[type="email"] {
+
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+input[type="text"] {
+
+    border: none;
+    border-bottom: 1px solid black;
+    outline: none;
+}
+
+
+// start slider styling
+input[type="range"] {
+    -webkit-appearance: none;
+    margin: 18px 0;
+    width: 100%;
+}
+
+input[type=range]:focus {
+    outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+    width: 100%;
+    height: 5px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: $blue;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+}
+
+input[type=range]::-webkit-slider-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 30px;
+    width: 10px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+    -webkit-appearance: none;
+    margin-top: -14px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+    background: #367ebd;
+}
+
+input[type=range]::-moz-range-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    background: #3071a9;
+    border-radius: 1.3px;
+    border: 0.2px solid #010101;
+}
+
+input[type=range]::-moz-range-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+    width: 100%;
+    height: 8.4px;
+    cursor: pointer;
+    background: transparent;
+    border-color: transparent;
+    border-width: 16px 0;
+    color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+    background: #2a6495;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-ms-fill-upper {
+    background: #3071a9;
+    border: 0.2px solid #010101;
+    border-radius: 2.6px;
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-ms-thumb {
+    box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+    border: 1px solid #000000;
+    height: 36px;
+    width: 16px;
+    border-radius: 3px;
+    background: #ffffff;
+    cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+    background: #3071a9;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+    background: #367ebd;
+}
+
+// end slider styling
+
+
+
 .profile_container {
     display: flex;
-    height: 85%;
+    height: 80%;
     width: 100%;
     justify-content: center;
     flex-wrap: wrap;
     align-items: center;
 
+    .separate_span {
+        padding: 5px 10px;
+        font-size: 16px;
+        color: $red;
+    }
 
+    .input_flex {
+        display: flex;
+        justify-content: flex-start;
+        width: 40%;
+        font-size: 14px;
+        padding-left: 5px;
+        margin: 5px 0;
+
+        .checkmark {
+            height: 15px;
+            width: 15px;
+            background-color: lightgrey;
+            border-radius: 50%;
+            margin: 5px 10px 0 0;
+        }
+
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+
+
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+        }
+    }
+
+    .input_flex:hover input~.checkmark {
+        background-color: #ccc;
+    }
+
+    .input_flex input:checked~.checkmark {
+        background-color: $blue;
+    }
+
+    .input_flex input:checked~.checkmark:after {
+        display: block;
+    }
+
+    .input_flex .checkmark:after {
+        margin: 4px 0 0 4px;
+        width: 7px;
+        height: 7px;
+        border-radius: 50%;
+        background: white;
+    }
+
+    // start flex-box 1
     .profile_boxes {
-        height: 90%;
-        min-width: 750px;
-        max-width: 800px;
+        height: 100%;
+        width: 400px;
+        max-width: 550px;
         margin: 30px 30px;
         padding: 10px;
+        box-shadow: 0px 0px 5px 0px grey;
+        // border-radius: 10px;
+
+        input::placeholder {
+            color: $blue;
+        }
 
         .photo_button_container {
-            width: 700px;
-            height: 35%;
+            width: 100%;
+            height: 25%;
             display: flex;
             justify-content: space-around;
             margin: 0 auto;
 
             .photo_box {
-                width: 500px;
+                width: 40%;
                 height: 100%;
+                border-radius: 10px;
+
+                .photo_image {
+                    width: 100%;
+                    height: 100%;
+                    object-fit: fill;
+                    border-radius: 10px;
+                    // border: 1px dotted black;
+                }
+            }
+
+            // start select photo knop
+            .upload_button::-webkit-file-upload-button {
+                visibility: hidden;
             }
 
             .upload_button {
                 position: relative;
-                width: 100px;
-                height: 8%;
+                z-index: 1;
+                width: 30%;
+                height: 20%;
                 align-self: flex-end;
                 border: none;
                 color: white;
                 font-size: 16px;
                 transition: 0.4s;
+                outline: none;
             }
 
-            .upload_button:active {
-                transform: scale(0.6);
+            .upload_button::before {
+                content: 'pick a photo';
+                display: inline-block;
+                background-color: $blue;
+                border-radius: 10px;
+                padding: 6px 8px;
+                outline: none;
+                white-space: nowrap;
+                -webkit-user-select: none;
+                cursor: pointer;
+            }
+        }
+
+        // end select photo knop
+
+        .age_slider_box {
+            width: 80%;
+
+            #ageOutput {
+                width: 20%;
+                height: 50px;
+                font-size: 16px;
+                color: $blue;
+                margin-left: 10px;
             }
         }
 
         .input_container {
             display: flex;
             width: 90%;
-            height: 30%;
+            height: 50%;
             flex-direction: column;
             padding: 10px 10px;
             margin: 0 auto;
             font-size: 14px;
 
-            .separate_span {
-                padding: 5px 10px;
-                font-size: 16px;
+            .gender_span {
                 color: $blue;
-                
-            }
-
-            .input_flex {
-                display: flex;
-                justify-content: flex-start;
-                width: 30%;
-                font-size: 12px;
-                padding-left: 5px;
-                
             }
 
             .input_profile_page {
                 width: 50%;
                 height: 35px;
                 margin-left: 10px;
+                color: $blue;
             }
 
             .input_range {
@@ -85,22 +300,312 @@
         .who_am_i {
             display: flex;
             flex-direction: column;
-            width: 652px;
-            height: 320px;
+            width: 100%;
+            height: 30%;
             margin: 0 auto;
 
             .text_area {
-                width: 100%;
-                height: 80%;
+                width: 90%;
+                height: 40%;
+                margin: 0 auto;
+                resize: none;
             }
 
             .see_personal_page {
                 display: flex;
-                justify-content: center;
+                justify-content: space-around;
                 align-items: center;
                 width: 100%;
-                height: 20%;
+                height: 30%;
+                margin: 10px auto;
+
+                .button_personal_view {
+                    border: none;
+                    color: white;
+                    background-color: $blue;
+                    font-size: 18px;
+                    width: 40%;
+                    height: 40px;
+                    border-radius: 10px;
+                    outline: none;
+                    transition: 0.3s;
+                }
+
+                .button_save_changes {
+                    border: none;
+                    color: white;
+                    background-color: $red;
+                    font-size: 18px;
+                    width: 40%;
+                    height: 40px;
+                    border-radius: 10px;
+                    outline: none;
+                    transition: 0.3s;
+                }
+
+                .button_save_changes:active {
+                    transform: scale(0.8);
+                }
+
+                .button_personal_view:active {
+                    transform: scale(0.8);
+                }
             }
+        }
+    }
+
+    // start flex-box 2
+    .filter_flex {
+        width: 100%;
+        height: 50%;
+
+        .filter_name {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            color: $blue;
+            font-size: 28px;
+        }
+
+        .filter_options {
+            width: 100%;
+            height: 350px;
+
+            .genre_box {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                margin-right: 30px;
+
+                input {
+                    border: none;
+                    border-bottom: 1px solid black;
+                    outline: none;
+                }
+
+                .list_dropdown {
+                    margin-left: 10px;
+                    height: 30px;
+                }
+            }
+
+            .radio_box_container {
+                display: flex;
+                width: 100%;
+                justify-content: space-around;
+                padding-left: 5px;
+                padding-top: 5px;
+
+                .input_radio_box2 {
+                    width: 40%;
+                    display: flex;
+                    justify-content: space-around;
+                    position: relative;
+                    cursor: pointer;
+                    font-size: 14px;
+                    padding-right: 20px;
+                    align-items: center;
+
+                  
+                }
+
+                .input_radio_box {
+                    width: 25%;
+                    display: flex;
+                    justify-content: space-around;
+                    position: relative;
+                    cursor: pointer;
+                    font-size: 14px;
+                    padding-right: 20px;
+                    align-items: center;
+                }
+
+        
+
+            }
+
+            .filter_age {
+                margin-left: 10px;
+                width: 80%;
+            }
+        }
+
+        .find_matches_button {
+            display: inline-block;
+            border: none;
+            color: white;
+            font-size: 18px;
+            width: 40%;
+            height: 40px;
+            border-radius: 10px;
+            outline: none;
+            transition: 0.3s;
+            background-color: $blue;
+        }
+
+        .find_matches_button:active {
+            transform: scale(0.8);
+        }
+    }
+
+
+    .matches_flex {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        height: 50%;
+
+        .matches_card {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 15%;
+            width: 100%;
+
+            .card_photo_box {
+                height: 100%;
+                width: 15%;
+                border: 1px dotted black;
+                transition: 0.4s;
+            }
+
+            .card_photo_box:hover {
+                transform: scale(2);
+            }
+
+            .card_name_box {
+                height: 50%;
+                width: 60%;
+                border-bottom: 1px solid black;
+            }
+
+            #card_button_box {
+                width: 8%;
+                height: 60%;
+                background-image: url("../images/heart.png");
+                background-position: center;
+                background-size: cover;
+                cursor: pointer;
+                transition: 0.4s;
+            }
+
+            #card_button_box:active {
+                transform: scale(1.5);
+            }
+
+        }
+
+    }
+
+    // start flex-box 3
+    .current_dates_container {
+        width: 100%;
+        height: 50%;
+
+        .filter_name {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            color: $blue;
+            font-size: 28px;
+        }
+
+        .current_dates_box {
+            width: 100%;
+            height: 80%;
+            display: flex;
+            justify-content: space-around;
+            flex-direction: column;
+            align-items: center;
+
+            .matches_card {
+                display: flex;
+                justify-content: space-around;
+                align-items: center;
+                height: 15%;
+                width: 100%;
+
+                .card_photo_box {
+                    height: 100%;
+                    width: 15%;
+                    border: 1px dotted black;
+                    transition: 0.4s;
+                }
+
+                .card_photo_box:hover {
+                    transform: scale(2);
+                }
+
+                .card_name_box {
+                    height: 50%;
+                    width: 60%;
+                    border-bottom: 1px solid black;
+                }
+
+                #card_delete_box {
+                    width: 5%;
+                    height: 50%;
+                    background-image: url("../images/delete.png");
+                    background-position: center;
+                    background-size: contain;
+                    background-repeat: no-repeat;
+                    cursor: pointer;
+                }
+            }
+        }
+    }
+
+    .games_container {
+        width: 100%;
+        height: 50%;
+        display: flex;
+        justify-content: space-around;
+        flex-direction: column;
+        align-items: center;
+
+        .filter_name {
+            width: 100%;
+            height: 50px;
+            text-align: center;
+            color: $blue;
+            font-size: 28px;
+        }
+
+        .game_card {
+            width: 100%;
+            height: 13%;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+
+            .game_photo_box {
+                height: 100%;
+                width: 15%;
+                border: 1px dotted black;
+                transition: 0.4s;
+
+            }
+
+            .game_photo_box:hover {
+                transform: scale(2);
+            }
+
+            .games_input {
+                width: 60%;
+            }
+
+            #game_delete_box {
+                width: 5%;
+                height: 50%;
+                background-image: url("../images/delete.png");
+                background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
+                cursor: pointer;
+            }
+
         }
     }
 }

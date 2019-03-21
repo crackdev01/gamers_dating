@@ -7,24 +7,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-input[type="password"] {
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-}
-
-input[type="email"] {
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-}
-
-input[type="text"] {
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-}
-
 .debug {
   border: 1px solid blue;
 }

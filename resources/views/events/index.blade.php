@@ -8,7 +8,8 @@
 </head>
 <body>
     <h1>Events</h1>
-
+    total events: {{ $events->total() }}
+    <br><br>
     @foreach ($events as $event)
         <li>
             <a href="/events/{{ $event->id }}">
@@ -17,6 +18,9 @@
         </li>
     @endforeach
     <br>
+    {{ $events->links() }}
+    <br>
     <a href="/events/create">Create event</a>
+    
 </body>
 </html>

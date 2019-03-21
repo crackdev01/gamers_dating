@@ -7,24 +7,6 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
-input[type="password"] {
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-}
-
-input[type="email"] {
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-}
-
-input[type="text"] {
-  border: none;
-  border-bottom: 1px solid black;
-  outline: none;
-}
-
 .debug {
   border: 1px solid blue;
 }
@@ -106,6 +88,7 @@ header {
   opacity: 1;
   visibility: hidden;
   margin-left: 18%;
+  z-index: 2;
 }
 
 .menu.show {
@@ -166,7 +149,7 @@ header {
 }
 
 .menu-branding {
-  background: #0F181F;
+  background: rgba(255, 255, 255, 0);
   -webkit-transform: translate3d(0, -100%, 0);
           transform: translate3d(0, -100%, 0);
   -webkit-transition: all 0.5s ease-out;
@@ -252,9 +235,8 @@ header {
   position: relative;
   font-family: 'Poppins', sans-serif;
   font-size: 16px;
-  text-transform: uppercase;
   padding: 16px;
-  font-weight: 500;
+  font-weight: bold;
   color: black;
   text-decoration: none;
   -webkit-transition: all 0.5s ease-out;
@@ -284,11 +266,14 @@ header {
   .container .flex1 .flex1_top {
     width: 60%;
   }
+  .home_container {
+    margin: 70px auto;
+  }
   .home_container a h1 {
     margin: 20px auto;
   }
   .photo_container img {
-    width: 350px;
+    width: 35%;
   }
   .menu .nav-link {
     padding: 50px;
@@ -297,19 +282,32 @@ header {
 }
 
 @media screen and (min-width: 769px) and (max-width: 1170px) {
-  .container .flex1 .flex1_top {
-    width: 60%;
+  .container_landing .flex1 .flex1_top {
+    width: 80%;
     margin: 40% auto 0 auto;
   }
-  .container .flex1 .flex1_top {
-    width: 60%;
-    margin: 40% auto 0 auto;
+  .container_landing .flex1 .flex1_bottom {
+    margin: 0 auto;
+  }
+  .container_landing .flex1 .flex1_bottom p {
+    font-size: 20px;
+  }
+  .container_landing .flex2 .flex2_top .flex2_top-input input[type="email"], .container_landing .flex2 .flex2_top .flex2_top-input input[type="password"] {
+    width: 170px;
+    font-size: 16px;
+  }
+  html {
+    background-position-y: 200px;
+    background-position-x: 25px;
+  }
+  .home_container {
+    margin: 70px auto;
   }
   .home_container a h1 {
     margin: 20px auto;
   }
   .photo_container img {
-    width: 300px;
+    width: 70%;
   }
   .menu {
     margin: 0%;
@@ -320,6 +318,10 @@ header {
   }
   .menu-nav {
     background: white;
+    background-image: url("/images/zelda_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .menu ul.menu-nav, .menu div.menu-branding {
     float: none;
@@ -345,26 +347,46 @@ header {
 }
 
 @media screen and (max-width: 768px) {
-  .container .flex1 .flex1_top {
-    width: 60%;
+  .container_landing .flex1 .flex1_top {
+    width: 80%;
     margin: 40% auto 0 auto;
+  }
+  .container_landing .flex1 .flex1_bottom {
+    margin: 0 auto;
+  }
+  .container_landing .flex1 .flex1_bottom p {
+    font-size: 16px;
+  }
+  .container_landing .flex2 .flex2_top .flex2_top-input input[type="email"], .container_landing .flex2 .flex2_top .flex2_top-input input[type="password"] {
+    width: 100px;
+    font-size: 14px;
+  }
+  html {
+    background-position-y: 150px;
+    background-position-x: 25px;
+  }
+  .home_container {
+    margin: 60px auto;
   }
   .home_container a h1 {
     font-size: 40px;
     margin: 20px auto;
   }
   .photo_container img {
-    width: 300px;
+    width: 100%;
   }
   .menu {
     margin: 0%;
   }
   .menu-branding, .menu-nav {
-    width: 50%;
     height: 100vh;
   }
   .menu-nav {
     background: white;
+    background-image: url("/images/zelda_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .menu ul.menu-nav, .menu div.menu-branding {
     float: none;
@@ -379,68 +401,83 @@ header {
     height: 100vh;
     -webkit-transform: translate3d(100%, 0, 0);
             transform: translate3d(100%, 0, 0);
-    font-size: 24px;
   }
   .menu .menu-branding {
     height: 0vh;
   }
   .menu .nav-link {
-    font-size: 40px;
+    font-size: 35px;
   }
 }
 
 @media screen and (max-width: 500px) {
-  .container .flex1 {
-    height: 30%;
+  .container_landing .flex1 {
+    height: 20vh;
     width: 100%;
   }
-  .container .flex1 .flex1_top {
+  .container_landing .flex1 .flex1_top {
     width: 70%;
     height: 70%;
-    margin: 7% auto 0 auto;
+    margin: 5% auto;
   }
-  .container .flex1 .flex1_bottom {
+  .container_landing .flex1 .flex1_bottom {
     display: none;
   }
-  .container .flex2 {
-    height: 70%;
+  .container_landing .flex2 {
     width: 100%;
+    height: 80vh;
   }
-  .container .flex2 .flex2_top {
+  .container_landing .flex2 .flex2_top {
     width: 100%;
     padding-top: 5px;
-    height: 10%;
+    height: 10vh;
   }
-  .login button {
-    width: 50px;
-    height: 30px;
+  .container_landing .flex2 .flex2_top .flex2_top-input input[type="email"], .container_landing .flex2 .flex2_top .flex2_top-input input[type="password"] {
+    width: 100px;
+    font-size: 14px;
   }
-  .password_container {
-    margin-left: 0px;
-  }
-  .flex2_top input[type="email"], input[type="password"] {
-    width: 110px;
-  }
-  .container .flex2 .flex2_middle {
-    height: 80%;
+  .container_landing .flex2 .flex2_middle {
+    height: 50vh;
     margin-top: 10px;
   }
-  .register_head {
-    font-size: 18px;
+  .container_landing .flex2 .flex2_middle .register_head {
+    margin: 0px;
   }
-  .register_content input[type="password"] {
-    width: 160px;
+  .container_landing .flex2 .flex2_middle .register_content {
+    height: 40vh;
+    margin: 10px auto;
   }
-  .register_button button {
-    width: auto;
-    margin: 5px;
-  }
-  .home_container a h1 {
-    font-size: 30px;
+  .home_container {
     margin: 50px auto;
   }
+  .home_container a h1 {
+    font-size: 25px;
+    margin: 0 auto;
+  }
+  .home_container a.link_personal, .home_container .home_container-link1 {
+    margin: 15px 20%;
+  }
+  .home_container a.link_personal h1, .home_container .home_container-link1 h1 {
+    font-size: 25px;
+  }
+  .home_container a.link_chat, .home_container .home_container-link2 {
+    margin: 15px 20%;
+  }
+  .home_container a.link_chat h1, .home_container .home_container-link2 h1 {
+    font-size: 25px;
+  }
+  .home_container a.link_events, .home_container .home_container-link3 {
+    margin: 15px 20%;
+  }
+  .home_container a.link_events h1, .home_container .home_container-link3 h1 {
+    font-size: 25px;
+  }
   .photo_container img {
-    width: 230px;
+    width: 100%;
+  }
+  .menu-btn {
+    right: 30px;
+    top: 30px;
   }
   .menu {
     margin: 0%;
@@ -451,6 +488,10 @@ header {
   }
   .menu-nav {
     background: white;
+    background-image: url("/images/zelda_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .menu ul.menu-nav, .menu div.menu-branding {
     float: none;
@@ -474,12 +515,43 @@ header {
 }
 
 @media screen and (min-width: 300px) and (max-width: 361px) {
+  .container_landing .flex2 .flex2_top .flex2_top-input input[type="email"], .container_landing .flex2 .flex2_top .flex2_top-input input[type="password"] {
+    width: 100px;
+    font-size: 12px;
+    color: #1666a0;
+  }
+  .container_landing .flex2 .flex2_middle {
+    height: 50vh;
+    margin-top: 10px;
+  }
+  .container_landing .flex2 .flex2_middle .register_head {
+    margin-top: 0px;
+  }
+  .container_landing .flex2 .flex2_middle .register_content {
+    height: 40vh;
+    margin: 10px auto;
+  }
+  .home_container {
+    margin: 40px auto;
+  }
   .home_container a h1 {
-    margin: 35px auto;
-    font-size: 30px;
+    font-size: 20px;
+  }
+  .home_container a.link_personal, .home_container .home_container-link1 {
+    margin: 15px 20%;
+  }
+  .home_container a.link_chat, .home_container .home_container-link2 {
+    margin: 15px 20%;
+  }
+  .home_container a.link_events, .home_container .home_container-link3 {
+    margin: 15px 20%;
   }
   .photo_container img {
-    width: 180px;
+    width: 100%;
+  }
+  .menu-btn {
+    right: 25px;
+    top: 30px;
   }
   .menu {
     margin: 0%;
@@ -490,6 +562,10 @@ header {
   }
   .menu-nav {
     background: white;
+    background-image: url("/images/zelda_background.jpg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
   }
   .menu ul.menu-nav, .menu div.menu-branding {
     float: none;

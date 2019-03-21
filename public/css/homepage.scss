@@ -3,8 +3,17 @@
 
 @import url('https://fonts.googleapis.com/css?family=Raleway');
 
+html {
+    background-image: url("../images/silhouette.jpg");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    background-position-y: 110px;
+}
+
 .home_container {
-    height: 85%;
+    // height: 85%;
+    margin: 20px auto;
     width: 100%;
     display: flex;
     flex-direction: column;
@@ -13,7 +22,8 @@
     // font-family: 'Poppins', sans-serif;
     font-family: 'Raleway', sans-serif;
 
-    .home_container, a {
+    .home_container,
+    a {
         color: #000;
         text-decoration: none;
         border: 2px solid #000;
@@ -23,49 +33,73 @@
         }
     }
 
-     a.link_personal, .home_container-link1 {
-        background-color: #fff;
-        flex: 1;
-        margin: 20px 20%;   
+    a.link_personal,
+    .home_container-link1 {
+        // background-color: rgba( 255, 255, 255, 0.6);
+        // flex: 1;
+        margin: 20px 20%;
         border-radius: 10px;
-    }
-
-    a.link_chat, .home_container-link2 {
-            background-color: #fff;
-            flex: 1;
-            margin: 20px 20%;
-            border-radius: 10px;
-        }
-
-    a.link_events, .home_container-link3 {
-            background-color: #fff;
-            flex: 1;
-            margin: 20px 20%;
-            border-radius: 10px;
-        }
+        transition: 0.7s;
 
         h1 {
             font-size: 60px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 10px;
+
+        }
+    }
+
+    a.link_chat,
+    .home_container-link2 {
+        // background-color: rgba(255, 255, 255, 0.6);
+        // flex: 1;
+        margin: 20px 20%;
+        border-radius: 10px;
+        transition: 0.7s;
+
+        h1 {
+            font-size: 60px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 10px;
+
+        }
+    }
+
+    a.link_events,
+    .home_container-link3 {
+        // background-color: rgba(255, 255, 255, 0.6);
+        // flex: 1;
+        margin: 20px 20%;
+        border-radius: 10px;
+        transition: 0.7s;
+
+        h1 {
+            font-size: 60px;
+            background-color: rgba(255, 255, 255, 0.6);
+            border-radius: 10px;
+
+        }
     }
 }
 
-// on hover links 
-.home_container a:hover {
-    color: #fff;
-    background-color: $red;
-    border: 2px solid $red;
-    i {
-        border-bottom: 2px solid #fff;
-    }
-    h1 {
-        background-color: $red;
-    }
-    span {
-        color: $blue;
-    }
-}
+    // on hover links 
+    .home_container a:hover {
+        color: black;
+        background-color: white;
+        border: 2px solid black;
 
-// Responsive
-@import 'mobile';
-    
+        i {
+            border-bottom: 2px solid black;
+        }
 
+        h1 {
+            background-color: white;
+        }
+
+        span {
+            color: $blue;
+        }
+    }
+
+    // Responsive
+    @import 'mobile';

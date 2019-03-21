@@ -7,6 +7,10 @@ body {
   font-family: 'Poppins', sans-serif;
 }
 
+.debug {
+  border: 1px solid blue;
+}
+
 input[type="password"] {
   border: none;
   border-bottom: 1px solid black;
@@ -25,15 +29,111 @@ input[type="text"] {
   outline: none;
 }
 
-.debug {
-  border: 1px solid blue;
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+          box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #1666a0;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+          box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 10px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -14px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
 }
 
 .profile_container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  height: 85%;
+  height: 80%;
   width: 100%;
   -webkit-box-pack: center;
       -ms-flex-pack: center;
@@ -45,17 +145,94 @@ input[type="text"] {
           align-items: center;
 }
 
+.profile_container .separate_span {
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #C3091E;
+}
+
+.profile_container .input_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 40%;
+  font-size: 14px;
+  padding-left: 5px;
+  margin: 5px 0;
+}
+
+.profile_container .input_flex .checkmark {
+  height: 15px;
+  width: 15px;
+  background-color: lightgrey;
+  border-radius: 50%;
+  margin: 5px 10px 0 0;
+}
+
+.profile_container .input_flex .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.profile_container .input_flex input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.profile_container .input_flex:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.profile_container .input_flex input:checked ~ .checkmark {
+  background-color: #1666a0;
+}
+
+.profile_container .input_flex input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.profile_container .input_flex .checkmark:after {
+  margin: 4px 0 0 4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: white;
+}
+
 .profile_container .profile_boxes {
-  height: 90%;
-  min-width: 750px;
-  max-width: 800px;
+  height: 100%;
+  width: 400px;
+  max-width: 550px;
   margin: 30px 30px;
   padding: 10px;
+  -webkit-box-shadow: 0px 0px 5px 0px grey;
+          box-shadow: 0px 0px 5px 0px grey;
+}
+
+.profile_container .profile_boxes input::-webkit-input-placeholder {
+  color: #1666a0;
+}
+
+.profile_container .profile_boxes input:-ms-input-placeholder {
+  color: #1666a0;
+}
+
+.profile_container .profile_boxes input::-ms-input-placeholder {
+  color: #1666a0;
+}
+
+.profile_container .profile_boxes input::placeholder {
+  color: #1666a0;
 }
 
 .profile_container .profile_boxes .photo_button_container {
-  width: 700px;
-  height: 35%;
+  width: 100%;
+  height: 25%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -65,14 +242,28 @@ input[type="text"] {
 }
 
 .profile_container .profile_boxes .photo_button_container .photo_box {
-  width: 500px;
+  width: 40%;
   height: 100%;
+  border-radius: 10px;
+}
+
+.profile_container .profile_boxes .photo_button_container .photo_box .photo_image {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: 10px;
+}
+
+.profile_container .profile_boxes .photo_button_container .upload_button::-webkit-file-upload-button {
+  visibility: hidden;
 }
 
 .profile_container .profile_boxes .photo_button_container .upload_button {
   position: relative;
-  width: 100px;
-  height: 8%;
+  z-index: 1;
+  width: 30%;
+  height: 20%;
   -ms-flex-item-align: end;
       align-self: flex-end;
   border: none;
@@ -80,11 +271,31 @@ input[type="text"] {
   font-size: 16px;
   -webkit-transition: 0.4s;
   transition: 0.4s;
+  outline: none;
 }
 
-.profile_container .profile_boxes .photo_button_container .upload_button:active {
-  -webkit-transform: scale(0.6);
-          transform: scale(0.6);
+.profile_container .profile_boxes .photo_button_container .upload_button::before {
+  content: 'pick a photo';
+  display: inline-block;
+  background-color: #1666a0;
+  border-radius: 10px;
+  padding: 6px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+}
+
+.profile_container .profile_boxes .age_slider_box {
+  width: 80%;
+}
+
+.profile_container .profile_boxes .age_slider_box #ageOutput {
+  width: 20%;
+  height: 50px;
+  font-size: 16px;
+  color: #1666a0;
+  margin-left: 10px;
 }
 
 .profile_container .profile_boxes .input_container {
@@ -92,7 +303,7 @@ input[type="text"] {
   display: -ms-flexbox;
   display: flex;
   width: 90%;
-  height: 30%;
+  height: 50%;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
@@ -102,28 +313,15 @@ input[type="text"] {
   font-size: 14px;
 }
 
-.profile_container .profile_boxes .input_container .separate_span {
-  padding: 5px 10px;
-  font-size: 16px;
+.profile_container .profile_boxes .input_container .gender_span {
   color: #1666a0;
-}
-
-.profile_container .profile_boxes .input_container .input_flex {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: start;
-      -ms-flex-pack: start;
-          justify-content: flex-start;
-  width: 30%;
-  font-size: 12px;
-  padding-left: 5px;
 }
 
 .profile_container .profile_boxes .input_container .input_profile_page {
   width: 50%;
   height: 35px;
   margin-left: 10px;
+  color: #1666a0;
 }
 
 .profile_container .profile_boxes .input_container .input_range {
@@ -139,27 +337,376 @@ input[type="text"] {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 652px;
-  height: 320px;
+  width: 100%;
+  height: 30%;
   margin: 0 auto;
 }
 
 .profile_container .profile_boxes .who_am_i .text_area {
-  width: 100%;
-  height: 80%;
+  width: 90%;
+  height: 40%;
+  margin: 0 auto;
+  resize: none;
 }
 
 .profile_container .profile_boxes .who_am_i .see_personal_page {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
   width: 100%;
-  height: 20%;
+  height: 30%;
+  margin: 10px auto;
+}
+
+.profile_container .profile_boxes .who_am_i .see_personal_page .button_personal_view {
+  border: none;
+  color: white;
+  background-color: #1666a0;
+  font-size: 18px;
+  width: 40%;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.profile_container .profile_boxes .who_am_i .see_personal_page .button_save_changes {
+  border: none;
+  color: white;
+  background-color: #C3091E;
+  font-size: 18px;
+  width: 40%;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+}
+
+.profile_container .profile_boxes .who_am_i .see_personal_page .button_save_changes:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.profile_container .profile_boxes .who_am_i .see_personal_page .button_personal_view:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.profile_container .filter_flex {
+  width: 100%;
+  height: 50%;
+}
+
+.profile_container .filter_flex .filter_name {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  color: #1666a0;
+  font-size: 28px;
+}
+
+.profile_container .filter_flex .filter_options {
+  width: 100%;
+  height: 350px;
+}
+
+.profile_container .filter_flex .filter_options .genre_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin-right: 30px;
+}
+
+.profile_container .filter_flex .filter_options .genre_box input {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+.profile_container .filter_flex .filter_options .genre_box .list_dropdown {
+  margin-left: 10px;
+  height: 30px;
+}
+
+.profile_container .filter_flex .filter_options .radio_box_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  padding-left: 5px;
+  padding-top: 5px;
+}
+
+.profile_container .filter_flex .filter_options .radio_box_container .input_radio_box2 {
+  width: 40%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  padding-right: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile_container .filter_flex .filter_options .radio_box_container .input_radio_box {
+  width: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  position: relative;
+  cursor: pointer;
+  font-size: 14px;
+  padding-right: 20px;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile_container .filter_flex .filter_options .filter_age {
+  margin-left: 10px;
+  width: 80%;
+}
+
+.profile_container .filter_flex .find_matches_button {
+  display: inline-block;
+  border: none;
+  color: white;
+  font-size: 18px;
+  width: 40%;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  background-color: #1666a0;
+}
+
+.profile_container .filter_flex .find_matches_button:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.profile_container .matches_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 50%;
+}
+
+.profile_container .matches_flex .matches_card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15%;
+  width: 100%;
+}
+
+.profile_container .matches_flex .matches_card .card_photo_box {
+  height: 100%;
+  width: 15%;
+  border: 1px dotted black;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.profile_container .matches_flex .matches_card .card_photo_box:hover {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+.profile_container .matches_flex .matches_card .card_name_box {
+  height: 50%;
+  width: 60%;
+  border-bottom: 1px solid black;
+}
+
+.profile_container .matches_flex .matches_card #card_button_box {
+  width: 8%;
+  height: 60%;
+  background-image: url("../images/heart.png");
+  background-position: center;
+  background-size: cover;
+  cursor: pointer;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.profile_container .matches_flex .matches_card #card_button_box:active {
+  -webkit-transform: scale(1.5);
+          transform: scale(1.5);
+}
+
+.profile_container .current_dates_container {
+  width: 100%;
+  height: 50%;
+}
+
+.profile_container .current_dates_container .filter_name {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  color: #1666a0;
+  font-size: 28px;
+}
+
+.profile_container .current_dates_container .current_dates_box {
+  width: 100%;
+  height: 80%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile_container .current_dates_container .current_dates_box .matches_card {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 15%;
+  width: 100%;
+}
+
+.profile_container .current_dates_container .current_dates_box .matches_card .card_photo_box {
+  height: 100%;
+  width: 15%;
+  border: 1px dotted black;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.profile_container .current_dates_container .current_dates_box .matches_card .card_photo_box:hover {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+.profile_container .current_dates_container .current_dates_box .matches_card .card_name_box {
+  height: 50%;
+  width: 60%;
+  border-bottom: 1px solid black;
+}
+
+.profile_container .current_dates_container .current_dates_box .matches_card #card_delete_box {
+  width: 5%;
+  height: 50%;
+  background-image: url("../images/delete.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.profile_container .games_container {
+  width: 100%;
+  height: 50%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile_container .games_container .filter_name {
+  width: 100%;
+  height: 50px;
+  text-align: center;
+  color: #1666a0;
+  font-size: 28px;
+}
+
+.profile_container .games_container .game_card {
+  width: 100%;
+  height: 13%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile_container .games_container .game_card .game_photo_box {
+  height: 100%;
+  width: 15%;
+  border: 1px dotted black;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+}
+
+.profile_container .games_container .game_card .game_photo_box:hover {
+  -webkit-transform: scale(2);
+          transform: scale(2);
+}
+
+.profile_container .games_container .game_card .games_input {
+  width: 60%;
+}
+
+.profile_container .games_container .game_card #game_delete_box {
+  width: 5%;
+  height: 50%;
+  background-image: url("../images/delete.png");
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  cursor: pointer;
 }
 /*# sourceMappingURL=profile_personalpage.css.map */
