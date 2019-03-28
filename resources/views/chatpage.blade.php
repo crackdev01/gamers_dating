@@ -1,8 +1,16 @@
 @extends('master')
 
 <!--Title on tab current page -->
-@section('title', 'chat')  
+@section('title', 'Chat') 
 
-@section('content')
+<!--Name / logo landingpage -->
+@section('logo/menu')
+@include ('codeincludes/newmenu')
+
+<!-- Chat page -->
+@section('chat')
+@include('codeincludes/chat')
+
+{{-- @section('content')
     <h1>chatpage</h1>
-@endsection    
+@endsection     --}}

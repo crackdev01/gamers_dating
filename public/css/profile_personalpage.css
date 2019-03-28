@@ -205,13 +205,13 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .profile_container .profile_boxes {
-  height: 100%;
+  height: 90vh;
   width: 400px;
   max-width: 550px;
   margin: 30px 30px;
   padding: 10px;
-  -webkit-box-shadow: 0px 0px 5px 0px grey;
-          box-shadow: 0px 0px 5px 0px grey;
+  -webkit-box-shadow: 0px 0px 8px 0px black;
+          box-shadow: 0px 0px 8px 0px black;
 }
 
 .profile_container .profile_boxes input::-webkit-input-placeholder {
@@ -253,6 +253,7 @@ input[type=range]:focus::-ms-fill-upper {
   -o-object-fit: fill;
      object-fit: fill;
   border-radius: 10px;
+  border: 2px solid black;
 }
 
 .profile_container .profile_boxes .photo_button_container .upload_button::-webkit-file-upload-button {
@@ -329,6 +330,22 @@ input[type=range]:focus::-ms-fill-upper {
   margin-left: 10px;
 }
 
+.profile_container .profile_boxes .input_container .age_box_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.profile_container .profile_boxes .input_container .age_box_container #ageOutput {
+  color: #1666a0;
+  font-size: 16px;
+  margin-left: 20px;
+}
+
 .profile_container .profile_boxes .who_am_i {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -399,6 +416,37 @@ input[type=range]:focus::-ms-fill-upper {
           transform: scale(0.8);
 }
 
+.profile_container .radio_box_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+}
+
+.profile_container .radio_box_container .input_radio_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 20%;
+  font-size: 14px;
+  padding-left: 5px;
+  margin: 5px 0;
+}
+
+.profile_container .radio_box_container .input_radio_box2 {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  width: 40%;
+  font-size: 14px;
+  padding-left: 5px;
+  margin: 5px 0;
+}
+
 .profile_container .filter_flex {
   width: 100%;
   height: 50%;
@@ -410,6 +458,36 @@ input[type=range]:focus::-ms-fill-upper {
   text-align: center;
   color: #1666a0;
   font-size: 28px;
+}
+
+.profile_container .filter_flex .age_box {
+  width: 100%;
+}
+
+.profile_container .filter_flex .distance_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+}
+
+.profile_container .filter_flex .distance_box .font_box {
+  color: #1666a0;
+  font-size: 16px;
+}
+
+.profile_container .filter_flex .distance_box #distanceInput {
+  margin-left: 10px;
+  width: 80%;
+}
+
+.profile_container .filter_flex .distance_box #distanceOutput {
+  color: #1666a0;
+  font-size: 16px;
+  margin-left: 20px;
 }
 
 .profile_container .filter_flex .filter_options {
@@ -512,8 +590,9 @@ input[type=range]:focus::-ms-fill-upper {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  -ms-flex-pack: distribute;
-      justify-content: space-around;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -523,6 +602,7 @@ input[type=range]:focus::-ms-fill-upper {
           flex-direction: column;
   width: 100%;
   height: 50%;
+  border-top: 2px solid #C3091E;
 }
 
 .profile_container .matches_flex .matches_card {
@@ -536,19 +616,26 @@ input[type=range]:focus::-ms-fill-upper {
           align-items: center;
   height: 15%;
   width: 100%;
+  margin-bottom: 10px;
+  margin-top: 10px;
 }
 
 .profile_container .matches_flex .matches_card .card_photo_box {
   height: 100%;
   width: 15%;
-  border: 1px dotted black;
+  border: 1px solid black;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
 
+.profile_container .matches_flex .matches_card .card_photo_box img {
+  width: 100%;
+  height: 100%;
+}
+
 .profile_container .matches_flex .matches_card .card_photo_box:hover {
-  -webkit-transform: scale(2);
-          transform: scale(2);
+  -webkit-transform: scale(3);
+          transform: scale(3);
 }
 
 .profile_container .matches_flex .matches_card .card_name_box {
@@ -558,8 +645,8 @@ input[type=range]:focus::-ms-fill-upper {
 }
 
 .profile_container .matches_flex .matches_card #card_button_box {
-  width: 8%;
-  height: 60%;
+  width: 7%;
+  height: 50%;
   background-image: url("../images/heart.png");
   background-position: center;
   background-size: cover;
@@ -619,7 +706,7 @@ input[type=range]:focus::-ms-fill-upper {
 .profile_container .current_dates_container .current_dates_box .matches_card .card_photo_box {
   height: 100%;
   width: 15%;
-  border: 1px dotted black;
+  border: 1px solid black;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
@@ -686,7 +773,7 @@ input[type=range]:focus::-ms-fill-upper {
 .profile_container .games_container .game_card .game_photo_box {
   height: 100%;
   width: 15%;
-  border: 1px dotted black;
+  border: 1px solid black;
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }

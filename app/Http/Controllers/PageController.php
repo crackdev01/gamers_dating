@@ -30,7 +30,9 @@ class PageController extends Controller
             $personalpage->save();
             $personalpage = Personalpage::where("user_id",Auth::user()->id)->first();  
          }
+        //  $filterResult = Personalpage::where("user_id", Auth::user()->id)->get();
 
+         //return view('profilepage', compact('personalpage','filterResult'));
          return view('profilepage', compact('personalpage'));
 
     }

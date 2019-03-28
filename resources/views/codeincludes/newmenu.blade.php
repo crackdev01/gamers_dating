@@ -26,12 +26,12 @@
             <!-- Menu links------------------------------------>
             <ul class="menu-nav">
                 <li class="nav-item current">
-                    <a href="personal" class="nav-link">
+                    <a href="/personal" class="nav-link">
                         {{ Auth::user()->name }}
                     </a>
                 </li>
                 <li class="nav-item">
-                    <a href="home" class="nav-link">
+                    <a href="/home" class="nav-link">
                         Home
                     </a>
                 <li class="nav-item">
@@ -58,5 +58,5 @@
     @endguest
 
 
-        <script src="js/menu.js"></script>
+        <script src="/js/menu.js"></script>
     </body>

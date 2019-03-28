@@ -28,7 +28,11 @@ Route::get('/addevent/{event_id}', 'EventsController@addEvent');
 Route::resource('events', 'EventsController');
 Route::resource('games', 'GamesController');
 Route::resource('personalpages', 'PersonalPagesController');
-
+Route::resource('profilepages', 'ProfilePagesController');
 Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/contacts', 'ContactsController@get');
+Route::get('/conversation/{id}', 'ContactsController@getMessagesFor');
+Route::post('/conversation/send', 'ContactsController@send');
 
 

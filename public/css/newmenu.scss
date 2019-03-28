@@ -141,57 +141,6 @@ header {
             transform: translate3d(0, -100%, 0);
         }
     } 
-    
-    // animated navigation menu leftside
-    .menu-text {
-        text-align: center;
-        position: absolute;
-        align-items: center;
-        top: -50%; 
-        left: -50%;
-        transform: translate(-50%, -50%); //text position
-        //display: none;
-    }
-    
-    .menu-text span {
-        text-transform: uppercase;
-        display: block;
-    }
-    
-    .text1 {
-        color: #fff;
-        font-size: 1.9em;
-        font-weight: 700;
-        margin-bottom: 0.16666666666666666em;
-        letter-spacing: 0.5rem;
-        background: #0F181F;
-        position: relative;
-        animation: text 3s 1;
-        border-radius: 0.2em;
-    }
-    
-    .text2 {
-        color: black;
-        font-size: 1.5em;
-        font-weight: 500;
-        letter-spacing: 0.5rem;
-    }
-    
-    @keyframes text {
-        0%{
-            color: black;
-            margin-bottom: -40px;
-        }
-        30%{
-            letter-spacing: 15px;
-            margin-bottom: -40px;
-        }
-        85%{
-            letter-spacing: 8px;
-            margin-bottom: -40px;
-        }
-    } 
-    
 
     //nav links
     .nav-link {
