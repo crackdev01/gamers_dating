@@ -1,6 +1,114 @@
 // Variables
 @import 'config';
 
-html {
-    background-color: green;
+.container {
+    width: 100%;
+    height: 85%;
+    padding-top: 10px;
+
+    .month_container {
+        width: 100%;
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+
+        a {
+            width: 7%;
+            height: 25px;
+            background-color: white;
+            text-decoration: none;
+            color: $red;
+            text-align: center;
+            border: 0.5px solid $red;
+            box-shadow: 1px 1px 5px grey;
+            margin-top: 10px;
+            transition: 0.3s;
+        }
+
+        a:active {
+            transform: scale(0.8);
+        } 
+    }
+
+    .event_card_container {
+        width: 100%;
+        padding-top: 40px;
+        padding-bottom: 40px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: space-around;
+
+        .card_image {
+            width: 300px;
+            height: 450px;
+            display: flex;
+            justify-content: flex-end;
+            flex-direction: column;
+            position: relative;
+
+            img {
+                object-fit: fill;
+                position: absolute;
+                width: 100%;
+                height: 100%;
+                z-index: -1;
+            }
+
+            .card_sign_in {
+                cursor: pointer;
+            }
+
+            .card_description {
+                cursor: pointer;
+            }
+
+            .card_options {
+             width: 100%;
+             height: 5%;
+             text-align: center;
+             background-color: rgba(255,255,255, 0.3);
+             transition: 0.3s;
+             
+            }
+
+            .card_options:hover {
+                background-color: black;
+                color: white;
+            }
+
+        }
+    }
+
+    .navigate_container {
+        display: flex;
+        justify-content: space-around;
+
+        a {
+            text-decoration: none;
+            font-size: 20px;
+            color: $blue;
+            border-bottom: 1px solid rgba(22, 102, 160, 0);
+            border-top: 1px solid rgba(22, 102, 160, 0);
+            transition: 0.5s;
+        }
+
+        a:hover {
+            border-bottom: 1px solid $blue;
+            border-top: 1px solid $blue;
+        }
+    }
+
+    .total_events_container {
+        display: flex;
+        justify-content: center;
+    }
+
+
+
+
+
+
+
+
+
 }

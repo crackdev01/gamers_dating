@@ -1,26 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('master')
+
+<!--Title on tab current page -->
+@section('title', 'admin')
+
+@section('content')
+    <!--Name / logo landingpage -->
+    @section('logo/menu')
+    @include ('codeincludes/newmenu')
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('/css/adminevents.css') }}">
 </head>
 <body>
-    <h1>Events</h1>
+
+<div class="container_events">
+    <div class="container_events_title">
+        <h1>Admin Events</h1>
+    </div>
+    <div class="container_events_total">
     total events: {{ $events->total() }}
-    <br><br>
-    @foreach ($events as $event)
-        <li>
-            <a href="/events/{{ $event->id }}">
-            {{ $event->event_name }}
-            </a>
-        </li>
-    @endforeach
-    <br>
-    {{ $events->links() }}
-    <br>
-    <a href="/events/create">Create event</a>
+    </div>
+    <div class="container_events_table">
+        <table>
+        <th>Event name</th><th>Event date</th><th>Event time</th><th>Subscribe date till</th><th>#Subscribers</th><th>Edit</th><th>Delete</th>    
+        @foreach ($events as $event)
+            <tr>
+                <td><a href="/events/{{ $event->id }}">{{ $event->event_name }}</a></td>
+                <td>{{ $event->event_date }}</td>
+                <td>{{ $event->event_time }}</td>
+                <td>{{ $event->event_inschrijven_tm }}</td>
+                <td>{{ $event->event_count}}</td>
+                <td><a href="/events/{{ $event->id }}/edit"><button class="button_events_edit">edit</button></a></td>
+                <td>
+                    <form method="POST" action="/events/{{ $event->id }}">       
+                        @method('DELETE')
+                        @csrf
+                        <button class="button_events_delete" type="submit">Delete event</button>
+                    </form>
+                </td>
+            </tr>
+        @endforeach
+        </table>  
+    </div> {{-- end div container events table  --}}
     
+    <div class=container_events_create>
+        <a href="/events/create"><button class="button_events_create">Create event</button></a>
+        <a href="admin"><button class="button_events_back">Back</button></a>    
+    </div>
+</div>  {{-- end container events --}}
 </body>
 </html>

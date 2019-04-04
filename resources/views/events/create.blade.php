@@ -1,37 +1,52 @@
-<!DOCTYPE html>
-<html lang="en">
+@extends('master')
+
+<!--Title on tab current page -->
+@section('title', 'admin')
+
+@section('content')
+    <!--Name / logo landingpage -->
+    @section('logo/menu')
+    @include ('codeincludes/newmenu')
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('/css/adminevents.css') }}">
 </head>
 <body>
-    <h1>Create a new event</h1>
 
+<div class="container_events">
+    <div class="container_events_title">
+        <h1>Admin Create Event</h1>
+    </div>
     <form method="POST" action="/events">
         {{ csrf_field() }}
-        <div>
-            <input type="text" name="event_name" placeholder="Event name">
+        <label class="event_label">Event name</label>
+        <div class="event_field">
+            <input type="text" name="event_name" placeholder="Event name" autofocus required maxlength=60>
         </div>
-        <div>
-            <input type="text" name="event_date" placeholder="Event date">
+        <label class="event_label">Event date</label>
+        <div class="event_field">
+            <input type="date" name="event_date" placeholder="Event date" required>
         </div>
+        <label class="event_label">Event time</label>
         <div>
-            <input type="text" name="event_time" placeholder="Event time">
+            <input type="time" name="event_time" placeholder="Event time" required>
         </div>
+        <label class="event_label">Subscribe till</label>
         <div>
-            <input type="text" name="event_inschrijven_tm" placeholder="inschrijven t/m">
+            <input type="date" name="event_inschrijven_tm" placeholder="inschrijven t/m" required>
         </div>
+        <label class="event_label">Event image</label>
         <div>
-            <input type="text" name="event_image_url" placeholder="image naam">
+            <input type="text" name="event_image_url" placeholder="image naam" required maxlength=60>
         </div>
+        <label class="event_label">Event description</label>
         <div>
-            <textarea name="event_description" placeholder="Event description"></textarea>
+            <textarea name="event_description" placeholder="Event description" required maxlength=400></textarea>
         </div>
-        <button type="submit">Create event</button>
-    </form>   
-    <a href="/events/">Home</a>  
-    
+        <button class="button_events_create" type="submit">Create event</button>
+    </form>  
+    <a href="\events"><button class="button_events_back">Back</button></a> 
+</div>
+
 </body>
 </html>

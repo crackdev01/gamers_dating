@@ -6,6 +6,10 @@ use App\personalpage;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\User;
+use App\Game;
+
+use Illuminate\Support\Facades\Storage;
+use Illuminate\Support\Facades\File;
 
 class PersonalPagesController extends Controller
 
@@ -69,6 +73,7 @@ class PersonalPagesController extends Controller
 
     public function store(Request $request)
 
+
     {
         $personalpage = new personalpage();
         $personalpage->user_id = Auth::user()->id;
@@ -79,7 +84,7 @@ class PersonalPagesController extends Controller
         $personalpage->personal_gender = request('personal_gender');
         $personalpage->personal_age = request('personal_age');
         $personalpage->personal_location = request('personal_location');
-        $personalpage->personal_image_url = request('personal_image_url');
+        //$personalpage->personal_image_url = request('personal_image_url');
         $personalpage->personal_food = request('personal_food');
         $personalpage->personal_info = request('personal_info');
         $personalpage->personal_status = '1'; 
@@ -150,15 +155,23 @@ class PersonalPagesController extends Controller
 
      */
 
-    public function update(Request $request, Personalpage $personalpage)
+    public function update(Request $request, Personalpage $personalpage)  //<--------------------------------------------- $request aka form
     {
+        $image = $request->file('personal_image');
+
+        $extension = $image->getClientOriginalExtension();        
+
+        Storage::disk('public')->put($image->getFilename().'.'.$extension, File::get($image));
+
+       // dd($image->getFilename().'.'.$extension); 
+
         $personalpage->personal_firstname = request('personal_firstname');
         $personalpage->personal_lastname = request('personal_lastname');
         $personalpage->personal_nickname = request('personal_nickname');
         $personalpage->personal_gender = request('personal_gender');
         $personalpage->personal_age = request('personal_age');
         $personalpage->personal_location = request('personal_location');
-        $personalpage->personal_image_url = request('personal_image_url');
+        $personalpage->personal_image_url = $image->getFilename().'.'.$extension;
         $personalpage->personal_food = request('personal_food');
         $personalpage->personal_info = request('personal_info');
         $personalpage->save();

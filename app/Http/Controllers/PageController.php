@@ -30,10 +30,14 @@ class PageController extends Controller
             $personalpage->save();
             $personalpage = Personalpage::where("user_id",Auth::user()->id)->first();  
          }
-        //  $filterResult = Personalpage::where("user_id", Auth::user()->id)->get();
+        //get filter results if available
+        $filterResult = Personalpage::where("user_id", Auth::user()->id)->get();
+        //get the favorite dates
+        $user = User::find(Auth::user()->id);
+        $favorites =  $user::first()->dates()->get();
 
-         //return view('profilepage', compact('personalpage','filterResult'));
-         return view('profilepage', compact('personalpage'));
+         return view('profilepage', compact('personalpage','filterResult','favorites'));
+         //return view('profilepage', compact('personalpage'));
 
     }
 
@@ -45,6 +49,21 @@ class PageController extends Controller
             // dd($personalpages);
        
         return view('personalpage', compact('personalpage'));
+    }
+
+    public function personaleditpage() {
+        if (Personalpage::where("user_id",Auth::user()->id)->first()) {
+            $personalpage = Personalpage::where("user_id",Auth::user()->id)->first();
+        } else {
+            $personalpage = new Personalpage();
+            $personalpage->user_id = Auth::user()->id;
+            $personalpage->save();
+            $personalpage = Personalpage::where("user_id",Auth::user()->id)->first();  
+         }
+         
+        $personalpage = Personalpage::where("user_id",Auth::user()->id)->first();
+        $games = User::find(Auth::user()->id)->games()->get();
+        return view('personal_profile', compact('personalpage','games'));
     }
 
     public function chatpage() {

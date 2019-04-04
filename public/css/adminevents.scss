@@ -1,0 +1,193 @@
+body {
+    outline: 0;
+}
+
+$colors:(
+          button_edit : lighten(blue,25%),
+          button_edit_hover : blue,
+          button_edit_active : darken(blue, 25%),
+          button_delete : lighten(red, 25%),
+          button_delete_hover : red,
+          button_delete_active : darken(red, 25%),
+          hover_text: white,
+          table_header_line : black,
+          button_create : lighten(green,25%),
+          button_create_hover : green,
+          button_create_active : darken(green,25%),
+          button_back : lighten(orange,25%),
+          button_back_hover : orange,
+          button_back_active : darken(orange,25%)
+         
+          );
+
+@function color($color-name) {
+    @return map-get($colors, $color-name)
+}
+
+
+.container_events {
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width:100%;
+}
+
+.container_events_title {
+    margin-top:15px;
+}
+
+.container_events_total {
+
+}
+
+.container_events_table {
+    margin-top:15px;
+    height:50%;
+}
+
+.container_events_create {
+    margin-top:15px;
+}
+
+th {
+    border-bottom: 1px solid color(table_header_line);
+    margin-bottom: 10px;
+}
+
+tr {
+    
+}
+
+td {
+    vertical-align: top;
+}
+
+table {
+    text-align: center;
+}
+
+.button_events_delete {
+    border-radius: 6px;
+    background-color: color(button_delete);
+}
+
+.button_events_delete:hover {
+    background-color: color(button_delete_hover);
+    color: color(hover_text);
+}
+
+.button_events_delete:active {
+    border-radius: 6px;
+    background-color: color(button_delete_active);
+}
+
+.button_events_edit {
+    border-radius: 6px;
+    background-color: color(button_edit);
+}
+
+.button_events_edit:hover {
+    background-color: color(button_edit_hover);
+    color: color(hover_text);
+}
+
+.button_events_edit:active {
+    border-radius: 6px;
+    background-color: color(button_edit_active);
+}
+
+.button_events_create {
+    border-radius: 6px;
+    padding:15px;
+    margin: 5px;
+    background-color: color(button_create);
+}
+
+.button_events_create:hover {
+    background-color: color(button_create_hover);
+    color: color(hover_text);
+}
+
+.button_events_create:active {
+    border-radius: 6px;
+    background-color: color(button_create_active);
+}
+
+.button_events_back {
+    border-radius: 6px;
+    padding:15px;
+    margin: 5px;
+    background-color: color(button_back);
+}
+
+.button_events_back:hover {
+    background-color: color(button_back_hover);
+    color: color(hover_text);
+}
+
+.button_events_back:active {
+    border-radius: 6px;
+    background-color: color(button_back_active);
+}
+
+input[type=text] {
+    border-radius:6px;
+    margin:5px;
+    padding:5px;
+    width:80%;
+}
+
+input[type=date] {
+    border-radius:6px;
+    margin:5px;
+    padding:5px;
+    width:40%;
+}
+
+input[type=time] {
+    border-radius:6px;
+    margin:5px;
+    padding:5px;
+    width:40%;
+}
+
+textarea {
+    border-radius:6px;
+    margin:5px;
+    padding:5px;
+    width:80%;
+    height:10%;
+}
+
+.event_field {
+    display:block;
+    width:400px;
+}
+
+.event_label {
+    margin-left:5px;
+}
+
+.event_show_label {
+    width:200px;
+
+}
+
+
+.button_events_edit_los {
+    border-radius: 6px;
+    padding:15px;
+    margin: 5px;
+    background-color: color(button_edit);
+}
+
+.button_events_edit_los:hover {
+    background-color: color(button_edit_hover);
+    color: color(hover_text);
+}
+
+.button_events_edit_los:active {
+    border-radius: 6px;
+    background-color: color(button_edit_active);
+}

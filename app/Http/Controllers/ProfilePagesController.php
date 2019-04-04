@@ -9,6 +9,7 @@ use Illuminate\Support\Facades\Auth;
 use App\User;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\RedirectResponse;
+use App\Game;
 
 class ProfilePagesController extends Controller
 {
@@ -22,9 +23,24 @@ class ProfilePagesController extends Controller
     public function index(Request $request, Personalpage $personalpage)
 
     {
-            
+        dd('show profilepagescontroller');
+        $personalpage = Personalpage::where("user_id",Auth::user()->id)->first();  
+        //$filterResults = Personalpage::where('personal_gender', request('filter_gender'))->get();
+        $filterResults = Personalpage::where('personal_gender', request('filter_gender'))->where('user_id', '!=', Auth::user()->id)->get();
+        //get the favorite dates
+        $user = User::find(Auth::user()->id);
+        $favorites =  $user::first()->dates()->get();
+        
+     
+        //dd( $resultsWithCorrectGender );
+        
+        //dd($personalpage);
+        //dd($resultsWithCorrectGender);
+        
+
+         return view('profilepage', compact('personalpage','filterResults','favorites'));  
           //dd(request(['filter_age', 'filter_genre', 'filter_gender', 'filter_distance' ]));  
-          $filterResults = Personalpage::where('personal_gender', request('filter_gender'))->get();
+          //$filterResults = Personalpage::where('personal_gender', request('filter_gender'))->get();
           //dd( $resultsWithCorrectGender );
    
          
@@ -34,10 +50,10 @@ class ProfilePagesController extends Controller
            // foreach ($personalpages as $personalpage) {
            // dd($personalpage->personal_page);
            // }
-           return view('profilepage', [
-               'personalpage' => $personalpage,
-               'matches' => $filterResults
-           ]);
+        //    return view('profilepage', [
+        //        'personalpage' => $personalpage,
+        //        'matches' => $filterResults
+        //    ]);
 
     }
 
@@ -50,7 +66,7 @@ class ProfilePagesController extends Controller
     public function create()
 
     {
-        dd('create');
+        dd('create profilepagescontroller');
         return view('personalpages.create');
 
     }
@@ -65,7 +81,7 @@ class ProfilePagesController extends Controller
     public function store(Request $request)
 
     {
-        dd('store');
+        dd('store profilepagescontroller');
 
         return redirect('/personalpages');
 
@@ -78,14 +94,18 @@ class ProfilePagesController extends Controller
      * @return \Illuminate\Http\Response
      */
 
-    public function show(Request $request)
+    public function show(Request $request)  // this method is live in the profilepage
 
     {
+        //dd('show profilepagescontroller');
         //dd(request(['filter_age', 'filter_genre', 'filter_gender', 'filter_distance' ]));  
         $personalpage = Personalpage::where("user_id",Auth::user()->id)->first();  
         //$filterResults = Personalpage::where('personal_gender', request('filter_gender'))->get();
         $filterResults = Personalpage::where('personal_gender', request('filter_gender'))->where('user_id', '!=', Auth::user()->id)->get();
-
+        //get the favorite dates
+        $user = User::find(Auth::user()->id);
+        $favorites =  $user::first()->dates()->get();
+        
      
         //dd( $resultsWithCorrectGender );
         
@@ -93,7 +113,7 @@ class ProfilePagesController extends Controller
         //dd($resultsWithCorrectGender);
         
 
-         return view('profilepage', compact('personalpage','filterResults'));
+         return view('profilepage', compact('personalpage','filterResults','favorites'));
         //  [
             //  'personalpage' => $personalpage,
             //  'matches' => $resultsWithCorrectGender
@@ -115,7 +135,7 @@ class ProfilePagesController extends Controller
     public function edit(personalpage $personalpage)
 
     {
-        dd('edit');
+        dd('edit profilepagescontroller');
         return view('personalpages/edit', compact('personalpage'));
 
     }
@@ -131,7 +151,7 @@ class ProfilePagesController extends Controller
 
     public function update(Request $request, personalpage $personalpage)
     {
-        dd('update');
+        dd('update profilepagescontroller');
         //dd(request(['filter_age', 'filter_genre', 'filter_gender', 'filter_distance' ]));  
         $resultsWithCorrectGender = Personalpage::where('personal_gender', request('filter_gender'))->get();
         

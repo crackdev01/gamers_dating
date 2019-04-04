@@ -1,46 +1,52 @@
-@extends('events.layout')
+@extends('master')
+
+<!--Title on tab current page -->
+@section('title', 'admin')
 
 @section('content')
-    <h1>Show Event</h1>
+    <!--Name / logo landingpage -->
+    @section('logo/menu')
+    @include ('codeincludes/newmenu')
 
-    
-            
-            <div>
-                {{ $event->event_name }}
-             </div>
-                   
-            <div>
-              {{ $event->event_date }}"
-            </div>
-        
-        <div>
-          
-             {{ $event->event_time }}"
-        </div>
-        <div>
-            
-             {{ $event->event_inschrijven_tm }}"
-        </div>
-        <div>
-            
-            {{ $event->event_image_url }}"
-        </div>
-        <div>
-           
-        {{ $event->event_description }}
-            
-        </div>
+<head>
+    <link rel="stylesheet" href="{{ asset('/css/adminevents.css') }}">
+</head>
+<body>
 
-        <p>
-        <a href="/events/{{ $event->id }}/edit">Edit</a>
-        </p>   
-        <form method="POST" action="/events/{{ $event->id }}">       
-            {{-- {{ method_field('DELETE') }}
-            {{ csrf_field() }} --}}
-            @method('DELETE')
-            @csrf
-            <button type="submit">Delete event</button>
-        </form>   
-        <a href="/events/">Home</a>   
+<div class="container_events">
+    <div class="container_events_title">
+        <h1>Admin Show Event</h1>
+    </div>
+
+<div>
+    <label class="event_show_label" for="event_name">Event name :</label>
+    {{ $event->event_name }}
+</div>
+<div>
+    <label class="event_show_label" for="event_name">Event date :</label>
+    {{ $event->event_date }}
+</div>
+<div>
+    <label class="event_show_label" for="event_time">Event time :</label>
+    {{ $event->event_name }}
+</div>
+<div>
+    <label class="event_show_label" for="event_time">Subscribe till :</label>
+    {{ $event->event_inschrijven_tm }}
+</div>   
+<div>
+    <label class="event_show_label" for="event_time">Event image name :</label><br>
+    <img src="\images\events\{{ $event->event_image_url }}">
+</div>              
+<div>
+    <label class="event_show_label" for="event_time">Event description :</label><br>
+    {{ $event->event_description }}
+</div>       
+      
+
+<p>
+    <a href="/events/{{ $event->id }}/edit"><button class="button_events_edit_los">Edit</button></a>
+    <a href="\events"><button class="button_events_back">Back</button></a>    
+</p>        
 
 @endsection    

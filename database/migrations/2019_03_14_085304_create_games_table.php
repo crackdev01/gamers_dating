@@ -17,9 +17,9 @@ class CreateGamesTable extends Migration
             $table->bigIncrements('id');
             $table->string('game_name',60);
             $table->string('game_genre',40);
-            $table->string('game_image_url',50);
-            $table->string('game_extra',50)->nullable();
-            $table->text('game_description',400);
+            $table->string('game_image_url',50)->nullable(true);
+            $table->string('game_extra',50)->nullable(true);
+            $table->text('game_description',400)->nullable(true);
             $table->timestamps();
         });
     }

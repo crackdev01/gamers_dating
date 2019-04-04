@@ -20,7 +20,7 @@ class CreateEventsTable extends Migration
             $table->time('event_time');
             $table->date('event_inschrijven_tm');
             $table->string('event_image_url',60);
-            $table->integer('event_count')->nullable();
+            $table->integer('event_count')->default(0);
             $table->text('event_description',400);
             $table->string('event_extra',60)->nullable();
             $table->timestamps();

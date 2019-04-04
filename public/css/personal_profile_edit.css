@@ -1,0 +1,708 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.debug {
+  border: 1px solid blue;
+}
+
+input[type="password"] {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+input[type="email"] {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+input[type="text"] {
+  border: none;
+  border-bottom: 1px solid black;
+  outline: none;
+}
+
+input[type="range"] {
+  -webkit-appearance: none;
+  margin: 18px 0;
+  width: 100%;
+}
+
+input[type=range]:focus {
+  outline: none;
+}
+
+input[type=range]::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 5px;
+  cursor: pointer;
+  -webkit-box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+          box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #1666a0;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]::-webkit-slider-thumb {
+  -webkit-box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+          box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 30px;
+  width: 10px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+  margin-top: -14px;
+}
+
+input[type=range]:focus::-webkit-slider-runnable-track {
+  background: #367ebd;
+}
+
+input[type=range]::-moz-range-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  background: #3071a9;
+  border-radius: 1.3px;
+  border: 0.2px solid #010101;
+}
+
+input[type=range]::-moz-range-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]::-ms-track {
+  width: 100%;
+  height: 8.4px;
+  cursor: pointer;
+  background: transparent;
+  border-color: transparent;
+  border-width: 16px 0;
+  color: transparent;
+}
+
+input[type=range]::-ms-fill-lower {
+  background: #2a6495;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-ms-fill-upper {
+  background: #3071a9;
+  border: 0.2px solid #010101;
+  border-radius: 2.6px;
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+}
+
+input[type=range]::-ms-thumb {
+  box-shadow: 1px 1px 1px #000000, 0px 0px 1px #0d0d0d;
+  border: 1px solid #000000;
+  height: 36px;
+  width: 16px;
+  border-radius: 3px;
+  background: #ffffff;
+  cursor: pointer;
+}
+
+input[type=range]:focus::-ms-fill-lower {
+  background: #3071a9;
+}
+
+input[type=range]:focus::-ms-fill-upper {
+  background: #367ebd;
+}
+
+button {
+  -webkit-box-shadow: 0px 0px 8px 0px black;
+          box-shadow: 0px 0px 8px 0px black;
+}
+
+.container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  height: auto;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container .profile_container {
+  height: auto;
+  width: 50%;
+  max-width: 550px;
+  margin: 30px 30px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 0px 8px 0px black;
+          box-shadow: 0px 0px 8px 0px black;
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container .profile_container .separate_span {
+  padding: 5px 10px;
+  font-size: 16px;
+  color: #C3091E;
+}
+
+.container .profile_container .input_flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  width: 40%;
+  font-size: 14px;
+  padding-left: 5px;
+  margin: 5px 0;
+}
+
+.container .profile_container .input_flex .checkmark {
+  height: 15px;
+  width: 15px;
+  background-color: lightgrey;
+  border-radius: 50%;
+  margin: 5px 10px 0 0;
+}
+
+.container .profile_container .input_flex .checkmark:after {
+  content: "";
+  position: absolute;
+  display: none;
+}
+
+.container .profile_container .input_flex input {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+}
+
+.container .profile_container .input_flex:hover input ~ .checkmark {
+  background-color: #ccc;
+}
+
+.container .profile_container .input_flex input:checked ~ .checkmark {
+  background-color: #1666a0;
+}
+
+.container .profile_container .input_flex input:checked ~ .checkmark:after {
+  display: block;
+}
+
+.container .profile_container .input_flex .checkmark:after {
+  margin: 4px 0 0 4px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: white;
+}
+
+.container .profile_container input::-webkit-input-placeholder {
+  color: #1666a0;
+}
+
+.container .profile_container input:-ms-input-placeholder {
+  color: #1666a0;
+}
+
+.container .profile_container input::-ms-input-placeholder {
+  color: #1666a0;
+}
+
+.container .profile_container input::placeholder {
+  color: #1666a0;
+}
+
+.container .profile_container .photo_button_container {
+  width: 100%;
+  height: 35%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin: 0 auto;
+  padding-left: 20px;
+}
+
+.container .profile_container .photo_button_container .photo_box {
+  width: 55%;
+  height: 100%;
+  border-radius: 10px;
+  margin-left: 20px;
+  margin-right: 10px;
+}
+
+.container .profile_container .photo_button_container .photo_box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: 10px;
+  border: 2px solid black;
+}
+
+.container .profile_container .photo_button_container .upload_button_box {
+  height: 100%;
+  width: 70%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+  margin-top: 28px;
+}
+
+.container .profile_container .photo_button_container .upload_button_box .upload_button {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  height: auto;
+  border: none;
+  color: white;
+  font-size: 16px;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+  outline: none;
+}
+
+.container .profile_container .photo_button_container .upload_button_box .upload_button::-webkit-file-upload-button {
+  visibility: hidden;
+}
+
+.container .profile_container .photo_button_container .upload_button_box .upload_button::before {
+  content: 'pick a photo';
+  display: inline-block;
+  background-color: #1666a0;
+  border-radius: 10px;
+  padding: 6px 8px;
+  outline: none;
+  white-space: nowrap;
+  -webkit-user-select: none;
+  cursor: pointer;
+  -webkit-box-shadow: 0px 0px 8px 0px black;
+          box-shadow: 0px 0px 8px 0px black;
+  margin-top: 10px;
+  margin-left: 5px;
+}
+
+.container .profile_container .age_slider_box {
+  width: 80%;
+}
+
+.container .profile_container .age_slider_box #ageOutput {
+  width: 20%;
+  height: 50px;
+  font-size: 16px;
+  color: #1666a0;
+  margin-left: 10px;
+}
+
+.container .profile_container .input_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  height: 60%;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  padding: 10px 10px;
+  margin: 0 auto;
+  font-size: 14px;
+}
+
+.container .profile_container .input_container #changePassword {
+  color: white;
+  font-size: 12px;
+  margin: 10px 0 0 10px;
+  cursor: pointer;
+  border: none;
+  width: 50%;
+  height: 20px;
+  background-color: #C3091E;
+  -webkit-box-shadow: unset;
+          box-shadow: unset;
+  border-radius: 10px;
+  text-align: center;
+}
+
+.container .profile_container .input_container #password_modal {
+  display: none;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 500px;
+  height: 140px;
+  margin-top: 10px;
+  border: 2px solid #C3091E;
+  color: #C3091E;
+  font-weight: bold;
+  padding: 5px;
+  opacity: 0;
+  -webkit-animation: passwordBox 2s forwards;
+          animation: passwordBox 2s forwards;
+}
+
+.container .profile_container .input_container #password_modal .old_password_text {
+  width: 100%;
+  height: 25%;
+  text-align: center;
+}
+
+.container .profile_container .input_container #password_modal .old_password {
+  width: 100%;
+  height: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  border-bottom: 1.5px solid #C3091E;
+  padding-bottom: 5px;
+}
+
+.container .profile_container .input_container #password_modal .new_password_text {
+  width: 100%;
+  height: 25%;
+  text-align: center;
+}
+
+.container .profile_container .input_container #password_modal .new_password {
+  width: 100%;
+  height: 25%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+}
+
+@-webkit-keyframes passwordBox {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes passwordBox {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container .profile_container .input_container .gender_span {
+  color: #1666a0;
+}
+
+.container .profile_container .input_container .input_profile_page {
+  width: 50%;
+  height: 35px;
+  margin-left: 10px;
+  color: #1666a0;
+}
+
+.container .profile_container .input_container .input_range {
+  width: 50%;
+  margin-left: 10px;
+}
+
+.container .profile_container .input_container .age_box_container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 80%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.container .profile_container .input_container .age_box_container #ageOutput {
+  color: #1666a0;
+  font-size: 16px;
+  margin-left: 20px;
+}
+
+.container .profile_container .who_am_i {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  width: 100%;
+  height: 30%;
+  margin: 0 auto;
+}
+
+.container .profile_container .who_am_i .text_area {
+  width: 90%;
+  height: 50%;
+  margin: 0 auto;
+  resize: none;
+}
+
+.container .profile_container .who_am_i .see_personal_page {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 30%;
+  margin: 10px auto;
+}
+
+.container .profile_container .who_am_i .see_personal_page #buttonPersonalView {
+  -webkit-transition: 0.5s;
+  transition: 0.5s;
+}
+
+.container .profile_container .who_am_i .see_personal_page .button_personal_view {
+  border: none;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background-color: #1666a0;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  font-size: 18px;
+  width: 40%;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  -webkit-box-shadow: 0px 0px 8px 0px black;
+          box-shadow: 0px 0px 8px 0px black;
+  cursor: pointer;
+}
+
+.container .profile_container .who_am_i .see_personal_page .button_save_changes {
+  border: none;
+  color: white;
+  background-color: #C3091E;
+  font-size: 18px;
+  width: 40%;
+  height: 40px;
+  border-radius: 10px;
+  outline: none;
+  -webkit-transition: 0.3s;
+  transition: 0.3s;
+  cursor: pointer;
+}
+
+.container .profile_container .who_am_i .see_personal_page .button_save_changes:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.container .profile_container .who_am_i .see_personal_page .button_personal_view:active {
+  -webkit-transform: scale(0.8);
+          transform: scale(0.8);
+}
+
+.container #personalPopup {
+  width: 30%;
+  height: 650px;
+  margin: 30px 30px;
+  padding: 10px;
+  -webkit-box-shadow: 0px 0px 8px 0px black;
+          box-shadow: 0px 0px 8px 0px black;
+  display: none;
+  opacity: 1;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-animation-name: personal_view;
+          animation-name: personal_view;
+  -webkit-animation-iteration-count: 1;
+          animation-iteration-count: 1;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+}
+
+.container #personalPopup .photo_button_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 90%;
+  height: 30%;
+}
+
+.container #personalPopup .photo_button_box .personal_popup_photo_box {
+  margin: 0 auto;
+  height: 100%;
+  width: 50%;
+  margin-bottom: 10px;
+}
+
+.container #personalPopup .photo_button_box .personal_popup_photo_box img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  border-radius: 10px;
+}
+
+@-webkit-keyframes personal_view {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes personal_view {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+.container #personalPopup .back_button {
+  width: 50px;
+  height: 60px;
+}
+
+.container #personalPopup .back_button img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+}
+
+.container #personalPopup .personal_popup_input_box {
+  width: 70%;
+  height: 20%;
+  margin: 0 auto;
+}
+
+.container #personalPopup .personal_popup_input_box .input_area {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: auto;
+  height: 25px;
+  margin: 5px 0;
+}
+
+.container #personalPopup .personal_popup_input_box .input_area .personal_popup_input_area {
+  margin-right: 10px;
+  font-size: 18px;
+  color: #C3091E;
+}
+
+.container #personalPopup .personal_popup_input_box .input_area .personal_popup_db_input {
+  color: #1666a0;
+  font-size: 18px;
+}
+
+.container #personalPopup .personal_page_about_me_container {
+  width: 100%;
+  height: 20%;
+  padding: 8px 5px;
+  color: #1666a0;
+  overflow: hidden;
+}
+
+.container #personalPopup .personal_page_games_container {
+  width: 100%;
+  height: 30%;
+}
+
+.container #personalPopup .personal_page_games_container .personal_page_games_name_box {
+  margin: 0 auto;
+  height: 25px;
+  width: 100%;
+  text-align: center;
+  color: #C3091E;
+  font-size: 18px;
+}
+
+.container #personalPopup .personal_page_games_container .personal_page_games_game_link_card_box {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 85%;
+}
+
+.container #personalPopup .personal_page_games_container .personal_page_games_game_link_card_box .personal_page_games_image {
+  height: 60%;
+  width: 18%;
+}
+
+.container #personalPopup .personal_page_games_container .personal_page_games_game_link_card_box .personal_page_games_image img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: fill;
+     object-fit: fill;
+  -webkit-transition: 0.8s;
+  transition: 0.8s;
+}
+
+.container #personalPopup .personal_page_games_container .personal_page_games_game_link_card_box .personal_page_games_image img:hover {
+  -webkit-transform: scale(2.5);
+          transform: scale(2.5);
+}
+/*# sourceMappingURL=personal_profile_edit.css.map */

@@ -126,7 +126,6 @@ input[type=range]:focus::-ms-fill-upper {
 // end slider styling
 
 
-
 .profile_container {
     display: flex;
     height: 80%;
@@ -162,7 +161,6 @@ input[type=range]:focus::-ms-fill-upper {
             position: absolute;
             display: none;
         }
-
 
         input {
             position: absolute;
@@ -234,7 +232,7 @@ input[type=range]:focus::-ms-fill-upper {
             .upload_button {
                 position: relative;
                 z-index: 1;
-                width: 30%;
+                width: 40%;
                 height: 20%;
                 align-self: flex-end;
                 border: none;
@@ -369,7 +367,13 @@ input[type=range]:focus::-ms-fill-upper {
     }
 
     // start flex-box 2
+.relative_box{
+    background-image: url("/images/hearts_background.jpg");
+    background-position: center;
+    background-size: cover;
+    box-shadow: 0 0 10px 4px $red;
 
+}
     // begin opmaak van de radio boxen flex-2  
     .radio_box_container{
         display: flex;
@@ -382,6 +386,7 @@ input[type=range]:focus::-ms-fill-upper {
             font-size: 14px;
             padding-left: 5px;
             margin: 5px 0;
+            
         }
 
     .input_radio_box2 {
@@ -405,12 +410,19 @@ input[type=range]:focus::-ms-fill-upper {
             width: 100%;
             height: 50px;
             text-align: center;
-            color: $blue;
+            color: $red;
             font-size: 28px;
         }
 
         .age_box {
             width: 100%;
+
+            span {
+                
+                    color: $blue;
+                    font-size: 16px;
+                
+            }
         }
 
         .distance_box {
@@ -502,17 +514,25 @@ input[type=range]:focus::-ms-fill-upper {
             display: inline-block;
             border: none;
             color: white;
-            font-size: 18px;
+            font-size: 14px;
             width: 40%;
-            height: 40px;
+            height: 50px;
             border-radius: 10px;
             outline: none;
-            transition: 0.3s;
+            transition: 0.5s;
             background-color: $blue;
+            text-align: center;
+            cursor: pointer;
+
         }
 
         .find_matches_button:active {
             transform: scale(0.8);
+        }
+
+        .find_matches_button:hover {
+            box-shadow: 0px 0px 50px 5px $red;
+            background-color: $red;
         }
     }
 
@@ -538,12 +558,14 @@ input[type=range]:focus::-ms-fill-upper {
             .card_photo_box {
                 height: 100%;
                 width: 15%;
-                border: 1px solid black;
+                // border: 1px solid black;
                 transition: 0.4s;
+                border-radius: 10px;
 
                 img {
                     width: 100%;
                     height: 100%;
+                    border-radius: 10px;
                 }
             }
 
@@ -606,8 +628,14 @@ input[type=range]:focus::-ms-fill-upper {
                 .card_photo_box {
                     height: 100%;
                     width: 15%;
-                    border: 1px solid black;
+                    // border: 1px solid black;
                     transition: 0.4s;
+
+                    img {
+                        width: 100%;
+                        height: 100%;
+                        border-radius: 10px;
+                    }
                 }
 
                 .card_photo_box:hover {

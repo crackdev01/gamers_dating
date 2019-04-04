@@ -50,7 +50,7 @@ return [
 
         'public' => [
             'driver' => 'local',
-            'root' => storage_path('app/public'),
+            'root' =>  public_path() . '/images/profile_images', //storage_path('app/public'), //hier kunnen we dus blijkbaar de plek veranderen waar we onze images opslaan.
             'url' => env('APP_URL').'/storage',
             'visibility' => 'public',
         ],

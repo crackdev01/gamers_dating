@@ -7,7 +7,7 @@
     <!-- Menu button top right------------------------>
     <header class="">
         <div class="photo_container">
-                <img src="../images/logo_new.jpg" alt="logo" />
+                <img src="/images/logo_new.jpg" alt="logo" />
             </div>
 
         <div class="menu-btn">
@@ -25,8 +25,8 @@
             </div>
             <!-- Menu links------------------------------------>
             <ul class="menu-nav">
-                <li class="nav-item current">
-                    <a href="/personal" class="nav-link">
+                <li class="nav-item">
+                    <a href="/personaledit" class="nav-link">
                         {{ Auth::user()->name }}
                     </a>
                 </li>
@@ -34,6 +34,12 @@
                     <a href="/home" class="nav-link">
                         Home
                     </a>
+                </li>
+                <li class="nav-item">
+                    <a href="/home" class="nav-link">
+                        Admin
+                    </a>
+                </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();
                     document.getElementById('logout-form').submit();">

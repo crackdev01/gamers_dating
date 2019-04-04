@@ -1,4 +1,9 @@
-document.getElementById("ageOutput").innerHTML = '--';
+document.getElementById('buttonPersonalView').addEventListener ('click', openView);
+
+function openView() {
+document.getElementById('profileContainer').style = "display: none";
+document.getElementById('personalPopup').style.display = "flex";
+} 
 
 function ageSlider(val) {
     document.getElementById("ageOutput").innerHTML = val; 
@@ -9,3 +14,6 @@ function ageSlider(val) {
   function distanceSlider(val) {
     document.getElementById("distanceOutput").innerHTML = val; 
   }
+
+
+  

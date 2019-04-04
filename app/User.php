@@ -49,7 +49,7 @@ class User extends Authenticatable
 
     public function dates()
     {
-        return $this->belongsToMany('App\personalpage')->withTimestamps();
+        return $this->belongsToMany('App\Personalpage')->withTimestamps();
     }
 
 
