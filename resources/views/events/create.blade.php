@@ -1,3 +1,5 @@
+@if (Auth::user() && Auth::user()->role == 'admin')
+
 @extends('master')
 
 <!--Title on tab current page -->
@@ -44,9 +46,14 @@
             <textarea name="event_description" placeholder="Event description" required maxlength=400></textarea>
         </div>
         <button class="button_events_create" type="submit">Create event</button>
-    </form>  
-    <a href="\events"><button class="button_events_back">Back</button></a> 
+    </form> 
+    <div class="event_pos_back_but"> 
+        <a href="\events"><button class="button_events_back">Back</button></a> 
+    </div>    
 </div>
+@endsection
 
-</body>
-</html>
+@else 'Acces not allowed, only for admin!'
+@endif
+
+

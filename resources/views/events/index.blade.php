@@ -1,3 +1,5 @@
+@if (Auth::user() && Auth::user()->role == 'admin')
+
 @extends('master')
 
 <!--Title on tab current page -->
@@ -42,11 +44,17 @@
         @endforeach
         </table>  
     </div> {{-- end div container events table  --}}
-    
+    <a href="{{$events->previousPageUrl()}}">previous page</a>
+    <a href="{{$events->nextPageUrl()}}">next page</a> 
     <div class=container_events_create>
         <a href="/events/create"><button class="button_events_create">Create event</button></a>
-        <a href="admin"><button class="button_events_back">Back</button></a>    
+        <a href="admin"><button class="button_events_back">Admin home</button></a>    
     </div>
 </div>  {{-- end container events --}}
-</body>
-</html>
+
+@endsection
+
+@else 'Acces not allowed, only for admin!'
+@endif
+
+

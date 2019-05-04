@@ -105,7 +105,7 @@ class ProfilePagesController extends Controller
         //get the favorite dates
         $user = User::find(Auth::user()->id);
         $favorites =  $user::first()->dates()->get();
-        
+        //$myselectedgames = 
      
         //dd( $resultsWithCorrectGender );
         
@@ -135,8 +135,10 @@ class ProfilePagesController extends Controller
     public function edit(personalpage $personalpage)
 
     {
+    
         dd('edit profilepagescontroller');
         return view('personalpages/edit', compact('personalpage'));
+  
 
     }
 

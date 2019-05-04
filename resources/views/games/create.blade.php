@@ -1,32 +1,53 @@
-<!DOCTYPE html>
-<html lang="en">
+@if (Auth::user() && Auth::user()->role == 'admin')
+
+@extends('master')
+
+<!--Title on tab current page -->
+@section('title', 'admin')
+
+@section('content')
+    <!--Name / logo landingpage -->
+    @section('logo/menu')
+    @include ('codeincludes/newmenu')
+
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <link rel="stylesheet" href="{{ asset('/css/adminevents.css') }}">
 </head>
 <body>
-    <h1>Create a new game</h1>
 
+<div class="container_events">
+    <div class="container_events_title">
+        <h1>Admin Create Game</h1>
+    </div>
     <form method="POST" action="/games">
         {{ csrf_field() }}
-        <div>
-            <input type="text" name="game_name" placeholder="Game name">
+        <div class="event_label">
+            <label class="event_label">Game name</label>
+            <input type="text" name="game_name" placeholder="Game name" autofocus required maxlength=60>
         </div>
-        <div>
-            <input type="text" name="game_genre" placeholder="Game genre">
+        <div class="event_label">
+            <label class="event_label">Game genre</label>
+            <input type="text" name="game_genre" placeholder="Game genre" required maxlength=40>
         </div>
-        <div>
-            <input type="text" name="game_image_url" placeholder="Image name">
+        <div class="event_label">
+            <label class="event_label">Game image name</label>
+            <input type="text" name="game_image_url" placeholder="Image name" required maxlength=50>
         </div>
        
-        <div>
-            <textarea name="game_description" placeholder="Game description"></textarea>
+        <div class="event_label">
+            <label class="event_label">Game description</label>
+            <textarea name="game_description" placeholder="Game description"  required maxlength=400></textarea>
         </div>
-        <button type="submit">Create game</button>
-    </form>    
-    <a href="/games/">Home</a>  
+        <button class="button_events_create" type="submit">Create game</button>
+      </form> 
+      <div class="event_pos_back_but">
+        <a href="\events"><button class="button_events_back">Back</button></a>    
+      </div>
+ </div>
+@endsection
+
+@else 'Acces not allowed, only for admin!'
+@endif
     
-</body>
-</html>
+
+

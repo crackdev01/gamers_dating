@@ -3,7 +3,10 @@
 namespace App\Http\Controllers;
 
 use App\Game;
+use App\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 
 
 class GamesController extends Controller
@@ -15,7 +18,8 @@ class GamesController extends Controller
      */
     public function index()
     {
-        $games = Game::all();
+        //$games = Game::all();
+        $games = DB::table('games')->paginate(10);
         return view('games.index', compact('games'));
     }
 

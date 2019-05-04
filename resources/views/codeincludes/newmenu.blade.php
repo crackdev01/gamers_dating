@@ -35,10 +35,13 @@
                         Home
                     </a>
                 </li>
+                {{-- menu item only visible if admin --}}
+                @if (Auth::user() && Auth::user()->role == 'admin')
                 <li class="nav-item">
-                    <a href="/home" class="nav-link">
+                    <a href="/admin" class="nav-link">
                         Admin
                     </a>
+                @endif    
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="{{ route('logout') }}" onclick="event.preventDefault();

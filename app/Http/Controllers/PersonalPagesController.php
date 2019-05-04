@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Auth;
 use Illuminate\Http\Request;
 use App\User;
 use App\Game;
-
+use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Storage;
 use Illuminate\Support\Facades\File;
 
@@ -28,9 +28,9 @@ class PersonalPagesController extends Controller
     public function index()
 
     {
-
+        dd('hello');
         $personalpages = Personalpage::all();
-
+        
 
 
         return view('personalpages.index', compact('personalpages'));
@@ -83,7 +83,8 @@ class PersonalPagesController extends Controller
         $personalpage->personal_nickname = request('personal_nickname');
         $personalpage->personal_gender = request('personal_gender');
         $personalpage->personal_age = request('personal_age');
-        $personalpage->personal_location = request('personal_location');
+        $personalpage->personal_location_x = request('personal_location_x');
+        $personalpage->personal_location_y = request('personal_location_y');
         //$personalpage->personal_image_url = request('personal_image_url');
         $personalpage->personal_food = request('personal_food');
         $personalpage->personal_info = request('personal_info');
@@ -159,10 +160,11 @@ class PersonalPagesController extends Controller
     {
         $image = $request->file('personal_image');
 
-        $extension = $image->getClientOriginalExtension();        
-
-        Storage::disk('public')->put($image->getFilename().'.'.$extension, File::get($image));
-
+        if (isset ($image)) {
+            $extension = $image->getClientOriginalExtension();        
+            Storage::disk('public')->put($image->getFilename().'.'.$extension, File::get($image));
+        };
+        
        // dd($image->getFilename().'.'.$extension); 
 
         $personalpage->personal_firstname = request('personal_firstname');
@@ -170,13 +172,19 @@ class PersonalPagesController extends Controller
         $personalpage->personal_nickname = request('personal_nickname');
         $personalpage->personal_gender = request('personal_gender');
         $personalpage->personal_age = request('personal_age');
-        $personalpage->personal_location = request('personal_location');
-        $personalpage->personal_image_url = $image->getFilename().'.'.$extension;
+        $personalpage->personal_location_x = request('personal_location_x');
+        $personalpage->personal_location_y = request('personal_location_y');
+        if (isset ($image)) {
+            $personalpage->personal_image_url = $image->getFilename().'.'.$extension;
+        };    
         $personalpage->personal_food = request('personal_food');
         $personalpage->personal_info = request('personal_info');
         $personalpage->save();
         Auth::user()->name = request('user_nickname');
         Auth::user()->email = request('user_email');
+        if (null !== request('password')) {
+            Auth::user()->password = Hash::make(request('password'));
+        }
         Auth::user()->save();
 
         return redirect('/profile');

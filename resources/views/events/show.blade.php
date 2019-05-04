@@ -1,3 +1,5 @@
+@if (Auth::user() && Auth::user()->role == 'admin')
+
 @extends('master')
 
 <!--Title on tab current page -->
@@ -17,7 +19,6 @@
     <div class="container_events_title">
         <h1>Admin Show Event</h1>
     </div>
-
 <div>
     <label class="event_show_label" for="event_name">Event name :</label>
     {{ $event->event_name }}
@@ -41,12 +42,21 @@
 <div>
     <label class="event_show_label" for="event_time">Event description :</label><br>
     {{ $event->event_description }}
-</div>       
-      
-
+</div>    
 <p>
     <a href="/events/{{ $event->id }}/edit"><button class="button_events_edit_los">Edit</button></a>
-    <a href="\events"><button class="button_events_back">Back</button></a>    
+    <a href="\events"><button class="button_events_back">Back</button></a>  
+    <div class="show_pos_del_but">     
+        <form method="POST" action="/events/{{ $event->id }}">       
+            @method('DELETE')
+            @csrf
+            <button class="button_events_delete_los" type="submit">Delete event</button>
+        </form> 
+    </div> 
 </p>        
 
+
 @endsection    
+
+@else 'Acces not allowed, only for admin!'
+@endif

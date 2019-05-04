@@ -1,0 +1,17 @@
+@import url("https://fonts.googleapis.com/css?family=Poppins");
+body {
+  margin: 0;
+  padding: 0;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+.debug {
+  border: 1px solid blue;
+}
+
+html {
+  background-color: green;
+}
+/*# sourceMappingURL=profilepage.css.map */

@@ -19,8 +19,9 @@ class EventsController extends Controller
      */
     public function index()
     {
-        //$events = Event::all()->paginate(3);
-        $events = DB::table('events')->paginate(10);
+        
+        $events = DB::table('events')->paginate();
+        
         return view('events.index', compact('events'));
     }
 
@@ -114,20 +115,6 @@ class EventsController extends Controller
 
         return redirect('/events');
     }
-
-    public function addEvent(Request $request, $id) {
-
-        $user = User::find(Auth::user()->id);
-        if ($user->events->contains($id)) {
-            $user->events()->detach($id);
-        } else {
-        $user->events()->attach($id);
-        $events->id->event_count = 1;
-        }
-        return redirect('event');
-        }
-
-   
 
 
 } //end class

@@ -1,0 +1,68 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins');
+body {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+.debug {
+    border: 1px solid blue;  
+}
+
+// fonts
+$fontFamily: 'Poppins', sans-serif;
+
+$fontHeaderBig: 22px;
+$fontHeaderMedium: 20px;
+$fontHeaderSmall: 18px;
+
+$fontContentBig: 20px;
+$fontContentMedium: 18px;
+$FontContentSmall: 15px;
+
+// Colors
+$blue: #1666a0;
+$indigo: #6574cd;
+$purple: #9561e2;
+$pink: #f66D9b;
+$red: #C3091E;
+$orange: #f6993f;
+$yellow: #ffed4a;
+$green: #38c172;
+$teal: #4dc0b5;
+$cyan: #6cb2eb;
+
+@mixin easeOut {
+    transition: all 0.5s ease-out;
+}
+
+//Media Query Mixins
+@mixin mediaXs {
+    @media screen and (min-width: 300px) and (max-width: 361px) {
+        @content;
+    }
+}
+
+@mixin mediaSm {
+    @media screen and (max-width: 500px) {
+        @content;
+    }
+}
+
+@mixin mediaMd {
+    @media screen and (max-width: 768px) {
+        @content;
+    }
+}
+
+@mixin mediaLg {
+    @media screen and (min-width: 769px) and (max-width: 1170px) {
+        @content;
+    }
+}
+
+@mixin mediaXl {
+    @media screen and (min-width: 1171px) {
+        @content;
+    }
+}

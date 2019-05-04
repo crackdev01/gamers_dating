@@ -1,3 +1,5 @@
+@if (Auth::user() && Auth::user()->role == 'admin')
+  
 @extends('master')
 
 <!--Title on tab current page -->
@@ -38,5 +40,7 @@
     </a>
 
 </div>
-
 @endsection    
+
+@else 'Acces not allowed, only for admin!'
+@endif

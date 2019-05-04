@@ -1,13 +1,13 @@
 <head>
      <!-- provide the csrf token -->
-     <meta name="csrf-token" content="{{ csrf_token() }}" />
+     <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="stylesheet" href="{{ asset('/css/profile_personalpage.css') }}">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <script src = "https://ajax.googleapis.com/ajax/libs/jquery/2.1.3/jquery.min.js">
     </script>
 </head>
 {{-- start profile box 1 --}}
-<div class="profile_container">
+<div class="profile_container" id="profileContainer">
     <div class="profile_boxes">
             <div class="filter_flex">
                     <div class="filter_name">I'm looking for...</div>
@@ -68,8 +68,8 @@
                 @isset($filterResults)    
                     @foreach ($filterResults as $filterResult) 
                     <div class="matches_card">
-                        <a href="#" class="card_photo_box"><img src="../images/profile_images/{{ $filterResult->personal_image_url }}" alt=""/></a>
-                        <div class="card_name_box">{{ $filterResult->personal_firstname }}</div>
+                        <img class="card_photo_box" src="../images/profile_images/{{ $filterResult->personal_image_url }}" alt=""/>
+                        <div class="card_name_box"><a onclick="getProfile({{ $favorite->id }})">{{ $filterResult->personal_firstname }}</a></div>
                         <a onclick="mydates('{{$filterResult->id}}')" id="card_button_box"></a>
                     </div>
                     @endforeach
@@ -79,7 +79,7 @@
                </div>
     </div>
     {{-- Start profile box 2 --}}
-    <div class="profile_boxes relative_box">
+    <div class="profile_boxes relative_box" id="dateprofile">
     </div>
     {{-- Start profile box 3 --}}
     <div class="profile_boxes">
@@ -89,154 +89,125 @@
                 
                 @isset($favorites)
                     @foreach($favorites as $favorite)
-                        
                         <div class="matches_card">
                         <a href="#" class="card_photo_box"><img src="/images/profile_images/{{ $favorite->personal_image_url }}" alt=""/></a>
-                        <div class="card_name_box">{{ $favorite->personal_firstname }}</div>
+                        <div class="card_name_box"><a onclick="getProfile({{ $favorite->id }})">{{ $favorite->personal_firstname }}</a></div>
                         <a onclick="mydates('{{ $favorite->id }}')"><div class="delete_mydate"><i class="fas fa-user-times"></i></div></a>
                         </div>
-
                     @endforeach
-                @endisset   
-
-            {{-- <div>{{$loaddates}} in this box your favorites will appear if you click the heart</div> --}}
-                
-                          
+                @endisset  
+             {{-- <div>{{$loaddates}} in this box your favorites will appear if you click the heart</div> --}}     
             </div>
-
         </div>
         <div class="games_container">
-            <div class="filter_name">My top 5 games</div>
-            <div class="game_card">
-                <a href="#" class="game_photo_box"><img src="" alt="" /></a>
-                <input type="text" class="games_input" placeholder="find your game...">
-                <div id="game_delete_box"></div>
-            </div>
-            <div class="game_card">
-                <a href="#" class="game_photo_box"><img src="" alt="" /></a>
-                <input type="text" class="games_input" placeholder="find your game...">
-                <div id="game_delete_box"></div>
-            </div>
-            <div class="game_card">
-                <a href="#" class="game_photo_box"><img src="" alt="" /></a>
-                <input type="text" class="games_input" placeholder="find your game...">
-                <div id="game_delete_box"></div>
-            </div>
-            <div class="game_card">
-                <a href="#" class="game_photo_box"><img src="" alt="" /></a>
-                <input type="text" class="games_input" placeholder="find your game...">
-                <div id="game_delete_box"></div>
-            </div>
-            <div class="game_card">
-                <a href="#" class="game_photo_box"><img src="" alt="" /></a>
-                <input type="text" class="games_input" placeholder="find your game...">
-                <div id="game_delete_box"></div>
-            </div>
-        </div>
+                <div class="filter_name">My top 5 games</div>
+                <input type="text" name="search" id="search" class="form-control" placeholder="Search Game and click" />
+             {{-- output of the selection --}}
+             <div class="matches_flex">
+             <div id="gamesselection2"></div>     
+            <div id="getgames">
+            {{-- output for the first run in ajax for the other ones  --}}
+            @isset($myselectedgames)
+                @foreach($myselectedgames as $myselectedgame)
+                    <div class="matches_card">
+                    <img class="card_photo_box" src="/images/games/{{$myselectedgame->game_image_url }}" alt=""/>
+                    <div class="card_name_box"><a onclick="mygames({{ $myselectedgame->id }})">{{ $myselectedgame->game_name }}</a></div>
+                    <a class="delete_knop" onclick="mygames({{ $myselectedgame->id }})">X</a>
+                    </div>   
+                @endforeach
+            @endisset  
 
+            
+        </div>
+        </div>
+    </div>
     </div>
 
 </div>
+
 <script src="/js/profile.js"></script>
+
+ 
 <script>
-    
-        function mydates(personalId) {
-            //alert(argument);
-            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-            $.ajax({
-                    /* the route pointing to the post function */
-                    url: '/getdates',
-                    type: 'POST',
-                    /* send the csrf-token and the input to the controller */
-                    data: {_token: CSRF_TOKEN, message:$(".getinfo").val(), mydate:personalId},
-                    dataType: 'JSON',
-                    /* remind that 'data' is the response of the AjaxController */
-                    success: function (data) { 
-                        
-                    //alert(JSON.stringify(data.msg));
-                    //dates = data.msg[1].personal_firstname;    
-
-                    dates="";     
-                    data.msg.forEach(function(favorite) {
-                         //alert(favorite.personal_firstname);
-                         deletebutton = favorite.id;
-                         dates+= '<div class="matches_card">';
-                         dates+= '<a href="#" class="card_photo_box"><img src="/images/profile_images/' + favorite.personal_image_url + '" alt=""/></a>';
-                         dates+= '<div class="card_name_box">' + favorite.personal_firstname + '</div>';
-                         dates+= '<a onclick="mydates('+deletebutton+')"><div class="delete_mydate"><i class="fas fa-user-times"></i></div></a>';
-                         dates+= '</div>';
-                         //dates+= favorite.personal_firstname
-                         });
-
-
-                    //alert(dates);    
-                    $("#mydates").html(dates); 
-                    }    
-                });
-        };  
-       
-        console.log("main.js gorillapower");
-
-        // $(document).ready(function() {
-        //     $('#getRequest').click(function(){
-        //         $.get('getRequest', function(data){
-        //             console.log(data);
-        //         });
-        //     });
-        //     $('#register').submit(function(){
-        //         var fname = $('#')
-        //     })
-        // });
+    $(document).ready(function(){
+     
+     fetch_customer_data();
+     
+     
+     function fetch_customer_data(query = '') {
+     
+        console.log('hello : ',query); 
         
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
-        // function findyourmatch(form) {
-        //     var naam = form.filter_gender.value;
-        //     console.log(naam);
-        // }
+      $.ajax({
+            url:'/live_search',
+            type:'POST',
+            data: {_token: CSRF_TOKEN, message:$(".getinfo").val(), query:query},
+            dataType:'JSON',
+            success:function(data) {   
+                //console.log(data.table_data); 
+                console.log(JSON.stringify(data.result));   
+                foundGames=""
+                data.result.forEach(function(liveResult) {
+                showProfile = liveResult.id;
 
-        function findyourmatch(form) {
-            var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
-            // the filter parameters
-            var fgender = $("input[name=filter_gender]:checked").val();
-            var fage = $("input[name=filter_age]").val();
-            var fdistance = $("input[name=filter_distance]").val();
-            var fgenre = $("input[name=filter_genre]").val();
-            console.log(fgender,fage,fdistance,fgenre);
-            $.ajax({
-                    /* the route pointing to the post function */
-                    url: '/findyourmatch',
-                    type: 'POST',
-                    /* send the csrf-token and the input to the controller */
-                    data: {_token: CSRF_TOKEN, message:$(".getinfo").val(), gender:fgender, age:fage, distance:fdistance, genre:fgenre},
-                    dataType: 'JSON',
-                    /* remind that 'data' is the response of the AjaxController */
-                    success: function (data) { 
-                        
-                    //alert(JSON.stringify(data.msg));
-                    // dates = data.msg[1].personal_firstname;    
+            foundGames+= '<div class="matches_card">';
+            //foundGames+= '<img class="card_photo_box" src="/images/profile_images/' + liveResult.game_image_url + '" alt=""/>';
+            foundGames+= '<a class="output" onclick="mygames(' + liveResult.id +')">' + liveResult.game_name + '</a>';
+            //foundGames+= '<a onclick="mydates(' + liveResult.id + ')" id="card_button_box"></a>';
+            foundGames+= '</div>';            
+        });
 
-                    foundMatches="";     
-                    data.msg.forEach(function(filterResult) {
+                $('#gamesselection2').show();
+                $('#gamesselection2').html(foundGames);
+                $('#total_records').text(data.total_data);
+            }
+        }); //end ajax
+     }; //end function
+     
+     $(document).on('keyup', '#search', function(){
+      var query = $(this).val();
+      fetch_customer_data(query);
+     }); //end function
 
-                    showProfile = filterResult.id;
-                    
-                    foundMatches+= '<div class="matches_card">';
-                    foundMatches+= '<a href="#" class="card_photo_box"><img src="/images/profile_images/' + filterResult.personal_image_url + '" alt=""/></a>';
-                    foundMatches+= '<div class="card_name_box">' + filterResult.personal_firstname + '</div>';
-                    foundMatches+= '<a onclick="mydates(' + filterResult.id + ')" id="card_button_box"></a>';
-                    foundMatches+= '</div>';             
-                        
-                    console.log(filterResult);
-                        
-                    });
+    }); //end document
 
+    function mygames(game_id) {
+        console.log('selected :',game_id);
 
-                    //alert('dates');    
-                    $("#filterResults").html(foundMatches); 
-                    }    
-                });
-        };  
+        var CSRF_TOKEN = $('meta[name="csrf-token"]').attr('content');
 
-    </script>
-    <script src="/js/profile.js"></script>
+    $.ajax({
+      url:'/my_games',
+      type:'POST',
+      data: {_token: CSRF_TOKEN, message:$(".getinfo").val(), gameid:game_id},
+      dataType:'JSON',
+      success:function(data) {   
+          //console.log(data.table_data); 
+          console.log(JSON.stringify(data.result));   
+          console.log('dataid :',data.id);  
+          getGames = ""
+          data.result.forEach(function(gamesSelection) {
+          showProfile = gamesSelection.id;
+     
+         console.log('gamesselection',gamesSelection);
+      
+            getGames+= '<div class="matches_card">';
+            getGames+= '<img class="card_photo_box" src="/images/games/' + gamesSelection.game_image_url + '" alt=""/>';
+            getGames+= '<div class="card_name_box">' + gamesSelection.game_name + '</div>';
+            getGames+= '<a class="delete_knop" onclick=mygames("'+ gamesSelection.id+ '")>X</a>';
+            getGames+= '</div>';
+  });
+
+          $('#getgames').html(getGames);
+          $('#gamesselection2').hide();
+        
+      }
+  }); //end ajax
+}; //end function
+    
+    
+</script>
+
 

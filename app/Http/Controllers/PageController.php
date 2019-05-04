@@ -34,11 +34,14 @@ class PageController extends Controller
         $filterResult = Personalpage::where("user_id", Auth::user()->id)->get();
         //get the favorite dates
         $user = User::find(Auth::user()->id);
-        $favorites =  $user::first()->dates()->get();
+        //dd(User::find(Auth::user()->id));
+        $favorites =  User::find(Auth::user()->id)->dates()->get();
+        $myselectedgames = User::find(Auth::user()->id)->games()->get();
 
-         return view('profilepage', compact('personalpage','filterResult','favorites'));
+         return view('profilepage', compact('personalpage','filterResult','favorites','myselectedgames'));
          //return view('profilepage', compact('personalpage'));
 
+        
     }
 
     public function personalpage() {
@@ -63,7 +66,16 @@ class PageController extends Controller
          
         $personalpage = Personalpage::where("user_id",Auth::user()->id)->first();
         $games = User::find(Auth::user()->id)->games()->get();
-        return view('personal_profile', compact('personalpage','games'));
+        // return view('personal_profile', compact('personalpage','games'));
+        $check= true;
+        // dd('edit profilepagescontroller');
+        // return view('personalpages/edit', compact('personalpage'));
+        return view('personal_profile', [
+            'check' => $check,
+            'personalpage' => $personalpage,
+            'games' => $games
+        ]);
+
     }
 
     public function chatpage() {
